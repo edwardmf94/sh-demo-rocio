@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="Product">
+        <t t-jquery=".product-name" t-operation="append">
+            <br />
+			<t t-foreach="suppliers" t-as="supply">
+                <t t-if="supply.product_code != ''">
+                    <span class="label-supply"><t t-esc="supply.product_code"/></span>
+                </t>
+            </t>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_pos_pos_form_coupon" model="ir.ui.view">
+		<field name="name">pos.order.coupon.form.inherit</field>
+		<field name="model">pos.order</field>
+		<field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+		<field name="arch" type="xml">
+			<field name="pos_reference" position="after">
+				<field name="coupon_id"/>
+			</field>
+			<xpath expr="//notebook/page[@name='extra']" position="after">
+				<page string="Coupons">
+					<field name="coupon_program_ids" colspan="4" nolabel="1">
+						<tree string="Generated Coupons">
+							<field name="coupon_program_id"/>
+							<field name="coupon_id"/>
+						</tree>
+					</field>
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>

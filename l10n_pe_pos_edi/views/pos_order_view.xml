@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="pos_order_offline_view" model="ir.ui.view">
+		<field name="name">pos.order.offline.tree</field>
+		<field name="model">pos.order</field>
+		<field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+		<field name="arch" type="xml">
+			<field name="pos_reference" position="after">
+				<field name="offline_invoice_number" readonly="1" />
+				<field name="payment_term_id" readonly="1" />
+			</field>
+		</field>
+	</record>
+
+	<record id="view_pos_order_tree" model="ir.ui.view">
+		<field name="name">pos.order.tree.inherit</field>
+		<field name="model">pos.order</field>
+		<field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+		<field name="arch" type="xml">
+			<field name="partner_id" position="after">
+				<field name="offline_invoice_number"/>
+			</field>
+		</field>
+	</record>
+	
+	<record id="view_pos_order_filter" model="ir.ui.view">
+		<field name="name">pos.order.list.select.inherit</field>
+		<field name="model">pos.order</field>
+		<field name='inherit_id' ref='point_of_sale.view_pos_order_filter'/>
+		<field name="arch" type="xml">
+			<field name="name" position="after">
+				<field name="offline_invoice_number" string="Comprobante de pago"/>
+			</field>
+		</field>
+	</record>
+</odoo>

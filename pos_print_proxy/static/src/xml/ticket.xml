@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="div.centerpane" t-operation="append">
+            <button name="btnOpenCash">OPEN CASHBOX</button>
+        </t>
+    </t>
+
+    <t t-name="XmlReceiptWrappedProductNameLines">
+        <t t-foreach="line.product_name_wrapped.slice(1)" t-as="wrapped_line">
+            <line>
+                <left><t t-esc="wrapped_line"/></left>
+            </line>
+        </t>
+    </t>
+
+    <t t-name="XmlReceipt">
+        <receipt align='center' width='40' value-thousands-separator='' >
+            <t t-if='receipt.company.logo'>
+                <img />
+                <br/>
+            </t>
+            <textdoubleheight/>
+            <t t-if='!receipt.company.logo'>
+                <line align="center" font="b"><t t-esc='receipt.company.name' /></line>
+                <br/>
+            </t>
+            <textnormal/>
+            <t t-if='receipt.company.contact_address'>
+                <line align="center" font="a"><t t-esc='receipt.company.contact_address' /></line>
+            </t>
+            <t t-if='receipt.company.phone'>
+                <line align="center" font="a">Tel:<t t-esc='receipt.company.phone' /></line>
+            </t>
+            <t t-if='receipt.company.vat'>
+                <line align="center" font="a">VAT:<t t-esc='receipt.company.vat' /></line>
+            </t>
+            <t t-if='receipt.company.email'>
+                <line><t t-esc='receipt.company.email' /></line>
+            </t>
+            <t t-if='receipt.company.website'>
+                <line><t t-esc='receipt.company.website' /></line>
+            </t>
+            <t t-if='receipt.header_xml'>
+                <t t-raw='receipt.header_xml' />
+            </t>
+            <t t-if='!receipt.header_xml and receipt.header'>
+                <line><t t-esc='receipt.header' /></line>
+            </t>
+            <t t-if='receipt.cashier'>
+                <div class='cashier'>
+                    <line>--------------------------------</line>
+                    <line>Served by <t t-esc='receipt.cashier' /></line><br />
+                </div>
+            </t>
+            <hr />
+            <br />
+
+            <!-- Orderlines -->
+
+            <table class='receipt-orderlines'>
+                <tr>
+                    <td width="0.15" align="left" font="b">DESCR.</td>
+                    <td width="0.35" align="center" font="b">CANT</td>
+                    <td width="0.25" align="right" font="b">P.UNIT</td>
+                    <td width="0.25" align="right" font="b">P.TOTAL</td>
+                </tr>
+                <t t-foreach='receipt.orderlines' t-as='line'>
+                    <tr class="tr_product">
+                        <td width="1" align="left">
+                            <t t-esc="line.product_name_wrapped[0]"/>
+                        </td>
+                    </tr>
+                    <t t-if="line.discount !== 0">
+                        <tr>
+                            <td width="1" align="left">
+                                Con un <t t-esc="line.discount"/>% de descuento
+                            </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td width="0.15"></td>
+                        <td width="0.35" class="tr_quantity">
+                            <t t-esc="line.quantity"/> <t t-esc="line.unit_name"/>
+                        </td>
+                        <td width="0.25" align="right" class="line_price_unit">
+                            <t t-esc="line.price"/>
+                        </td>                        
+                        <td width="0.25" align="right" class="tr_subtotal">
+                            <t t-esc="line.price_display"/>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+            <hr />
+
+            <!-- Subtotal -->
+
+            <t t-set='taxincluded' t-value='Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001' />
+            <t t-if='!taxincluded'>
+                <table class="subtotal">
+                    <tr><td align="right">Subtotal</td><td align="right"><t t-esc="Math.abs(receipt.subtotal).toFixed(2)"/></td></tr>
+                </table>
+                <t t-foreach='receipt.tax_details' t-as='tax'>
+                    <table class="taxes">
+                        <tr><td align="right"><t t-esc='tax.name'/></td><td align="right"><t t-esc="Math.abs(tax.amount).toFixed(2)"/></td></tr>
+                    </table>
+                </t>
+            </t>
+
+            <!-- Total -->
+
+            <hr />
+            <table class="total">
+                <tr><td align="right">TOTAL</td><td align="right"><t t-esc="Math.abs(receipt.total_with_tax).toFixed(2)"/></td></tr>
+            </table>
+
+            <!-- Payment Lines -->
+
+            <t t-foreach='paymentlines' t-as='line'>
+                <table class="paymentline">
+                    <tr><td align="right"><t t-esc='line.name'/></td><td align="right"><t t-esc="Math.abs(line.amount).toFixed(2)"/></td></tr>
+                </table>
+            </t>
+
+            <table class="change">
+                <tr><td align="right">CHANGE</td><td align="right"><t t-esc="Math.abs(receipt.change).toFixed(2)"/></td></tr>
+            </table>
+            
+            <!-- Extra Payment Info -->
+
+            <t t-if='receipt.total_discount'>
+                <table>
+                    <tr><td align="right">Discounts</td><td align="right"><t t-esc="Math.abs(receipt.total_discount).toFixed(2)"/></td></tr>
+                </table>
+            </t>
+            <t t-if='taxincluded'>
+                <t t-foreach='receipt.tax_details' t-as='tax'>
+                    <table>
+                        <tr><td align="right"><t t-esc='tax.name'/></td><td align="right"><t t-esc="Math.abs(tax.amount).toFixed(2)"/></td></tr>
+                    </table>
+                </t>
+                <table>
+                    <tr><td align="right">Total Taxes</td><td align="right"><t t-esc="Math.abs(receipt.total_tax).toFixed(2)"/></td></tr>
+                </table>
+            </t>
+
+            <div class='before-footer' />
+
+            <!-- Footer -->
+            <t t-if='receipt.footer_xml'>
+                <t t-raw='receipt.footer_xml' />
+            </t>
+
+            <t t-if='!receipt.footer_xml and receipt.footer'>
+                <br/>
+                <t t-esc='receipt.footer' />
+                <br/>
+                <br/>
+            </t>
+
+            <div class='after-footer' />
+
+            <br/>
+            <div font='b' class='final-footer'>
+                <line><t t-esc='receipt.name' /></line>
+                <line><t t-esc='receipt.date.localestring' /></line>
+            </div>
+
+        </receipt>
+    </t>
+</templates>

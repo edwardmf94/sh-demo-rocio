@@ -1,0 +1,505 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_shortcut
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-12 03:00+0000\n"
+"PO-Revision-Date: 2021-02-12 03:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "\"F2\""
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "\"Tab\""
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "+ (Numpad)"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "- (Numpad)"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid ". (Numpad)"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "0-9 (Numpad)"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Action Description"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Arrow Down"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Arrow Up"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Back to Home/POS screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Back to previous screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Backspace"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cancel"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change number for \"Qty\", \"Disc\" and \"Price\""
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change payment line selection to down direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change payment line selection to up direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change payment method selection to down direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change payment method selection to up direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change selection of cart order line to down direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change selection of cart order line to up direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change selection of customer to down direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Change selection of customer to up direction"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Choose selected payment method"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Close popup modal"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid ""
+"Cursor will be default focused on product search panel when POS Home Screen "
+"(Product Screen) will be opened. In this time keyboard shortcut keys won't "
+"work except"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Customer Screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Customer search"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Delete"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Delete last number for \"Qty\", \"Disc\" and \"Price\""
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Delete selected order line from cart"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Delete selected payment line"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Enter"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Esc"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "F2"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Important Instruction (must read):"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Numeric pad \"Disc\" button select to change product line discount"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Numeric pad \"Price\" button select to change product line price"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Numeric pad \"Qty\" button select to change product line quantity"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Open customer screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Open new customer add form"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Open payment screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Page Down"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Page Up"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Payment Screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Point for numbers"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Press"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Print POS receipt"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Print customer invoice receipt"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Product search"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Product/Home Screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Receipt Screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Select invoice to print invoice on receipt screen"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Set selected customer"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Shortcut Key"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Shortcut Tips"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Shortcut Tips (F2)"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Shortcut Tips Modal"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Sortcut Tips"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Spacebar"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid ""
+"Switch focus product search panel to individual product and one to another "
+"product"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Switch number to negetive or positive"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "Tab"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "and"
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "button to get shortcut help."
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid ""
+"button to switch focus on product selection. Then all keyboard shortcut keys"
+" will work."
+msgstr ""
+
+#. module: pos_shortcut
+#. openerp-web
+#: code:addons/pos_shortcut/static/src/xml/pos.xml:0
+#, python-format
+msgid "shortcut buttons. Now, search product and press"
+msgstr ""

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pos_pos_oil_summary" model="ir.ui.view">
+            <field name="name">pos.order.tree.summary</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="summary_products"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_pos_pos_oil_form" model="ir.ui.view">
+            <field name="name">pos.order.oil</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='extra']" position="inside">
+                    <group string="Estación de Combustible">
+                        <field name="hose_id"/>
+                        <field name="vehicle_plate"/>
+                        <field name="vehicle_driver"/>
+                        <field name="vehicle_odometer"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_pos_session_form">
+            <field name="name">pos_psms.session.form</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="shift_id"/>
+                </xpath>
+                <notebook position="inside">
+					<page string="Resumen de contometros" attrs="{'invisible' : [('state', '=', 'opening_control')]}">
+						<field name="hose_statement_ids" attrs="{'invisible' : [('state', '=', 'opening_control')]}">
+							<tree editable="bottom" string="Contometros">
+								<field name="fuel_pump_id" readonly="1"/>
+								<field name="hose_id" readonly="1"/>
+								<field name="side" readonly="1"/>
+								<field name="start_count" groups="account.group_account_manager"/>
+								<field name="start_count_real"/>
+								<field name="end_count" groups="account.group_account_manager"/>
+								<field name="end_count_real" string="Lectura Cont. Final(Real)"/>
+								<field name="total_quantity_real" string="Unidades dispensadas Real"/>
+								<field name="total_quantity" readonly="1"/>
+								<field name="diff_quantity_real"/>
+								<field name="diff_amount_real" sum="Total"/>
+								<field name="total_amount" sum="Total" groups="account.group_account_manager"/>
+								<field name="total_transactions" groups="account.group_account_manager"/>
+								<field name="unit_price" groups="account.group_account_manager"/>
+								<field name="theoretical_end_count" groups="account.group_account_manager"/>
+								<field name="theoretical_end_count_amount" groups="account.group_account_manager"/>
+							</tree>
+						</field>
+					</page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

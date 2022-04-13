@@ -1,0 +1,435 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_sale_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-17 04:37+0000\n"
+"PO-Revision-Date: 2021-02-17 04:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid " was served successfully"
+msgstr " fue atendido con éxito"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "ACCOUNTING"
+msgstr "CONTABILIZADO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "AMOUNT TOTAL:"
+msgstr "MONTO TOTAL"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "ANULL"
+msgstr "ANULADO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Attend"
+msgstr "Atender"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Attended"
+msgstr "Atendido"
+
+#. module: pos_sale_list
+#: model:ir.model.fields,field_description:pos_sale_list.field_sale_order__shipped_stock
+msgid "Attended in warehouse"
+msgstr "Atendido en inventario"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Back"
+msgstr "Atrás"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "CANCELED"
+msgstr "ANULADO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "COMPLETE CANCELLATION"
+msgstr "CANCELACIÓN COMPLETA"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "CONFIRM OPERATION"
+msgstr "CONFIRMAR OPERACIÓN"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Client"
+msgstr "Cliente"
+
+#. module: pos_sale_list
+#: model:ir.model.fields,field_description:pos_sale_list.field_pos_config__pos_sale
+msgid "Connection with Corporate Sales"
+msgstr "Conectar con Ventas Corporativas"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Correlative"
+msgstr "Correlativo"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Create Voucher"
+msgstr "Crear Recibo"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "DATE:"
+msgstr "FECHA:"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "DESCRIPCION"
+msgstr "DESCRIPCION"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "DESCRIPTION"
+msgstr "DESCRIPCION"
+
+#. module: pos_sale_list
+#: model:ir.model.fields,field_description:pos_sale_list.field_sale_order__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: pos_sale_list
+#: model_terms:ir.ui.view,arch_db:pos_sale_list.view_pos_config_sale
+msgid "Enable Corporate Sales"
+msgstr "Habilitar Ventas Corporativas"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "INTERNAL CONTROL"
+msgstr "CONTROL INTERNO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/popups.js:0
+#, python-format
+msgid "Loading..."
+msgstr "Cargando..."
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "NAME:"
+msgstr "NOMBRE:"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "NEW"
+msgstr "NUEVO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "ORDERED"
+msgstr "ORDENADO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "ORDERS"
+msgstr "PEDIDOS"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "Order "
+msgstr "Orden "
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Order date"
+msgstr "Fecha de orden"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "PICKING"
+msgstr "PICKING"
+
+#. module: pos_sale_list
+#: model:ir.model,name:pos_sale_list.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración de Punto de Venta"
+
+#. module: pos_sale_list
+#: model:ir.model,name:pos_sale_list.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos de Punto de Venta"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Programmed for"
+msgstr "Programado para"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "R.U.C.:"
+msgstr ""
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/popups.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "REQUIRED INFORMATION"
+msgstr "INFORMACIÓN REQUERIDA"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "RETURN"
+msgstr "RETORNAR"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "S. ORDER"
+msgstr "P. VENTA"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "SELLER:"
+msgstr "VENDEDOR:"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "SENT"
+msgstr "ENVIADO"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "STREET:"
+msgstr "DIRECCIÓN:"
+
+#. module: pos_sale_list
+#: model:ir.model.fields,field_description:pos_sale_list.field_pos_order__sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de Venta"
+
+#. module: pos_sale_list
+#: model:ir.model,name:pos_sale_list.model_sale_order
+msgid "Sales Order"
+msgstr "Órdenes de venta"
+
+#. module: pos_sale_list
+#: model:ir.model.fields,field_description:pos_sale_list.field_sale_order__requested_date
+msgid "Scheduled Date"
+msgstr "Fecha prevista"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Scheduled date"
+msgstr "Fecha Prgramada"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Search... + Enter"
+msgstr "Buscar... + Enter"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Select the order date:"
+msgstr "Selecciona la fecha de orden"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Seller"
+msgstr "Vendedor"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Status"
+msgstr "Estado"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "TOTAL"
+msgstr ""
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "TOTAL ITEMS:"
+msgstr ""
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "TOTAL:"
+msgstr ""
+
+#. module: pos_sale_list
+#: model_terms:ir.ui.view,arch_db:pos_sale_list.view_pos_config_sale
+msgid "The POS will be joined with the Sales module"
+msgstr "El PdV se unirá al módulo de Ventas."
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "The order was attended"
+msgstr "La orden fue atendida"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "The order was successfully canceled"
+msgstr "La orden fue cancelada"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "The order will be canceled "
+msgstr "La orden será cancelada "
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "The order will be processed"
+msgstr "La orden será procesada"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/xml/pos.xml:0
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/popups.js:0
+#, python-format
+msgid "You must select a customer to continue"
+msgstr "Debes seleccionar un cliente para continuar"
+
+#. module: pos_sale_list
+#. openerp-web
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#: code:addons/pos_sale_list/static/src/js/screens.js:0
+#, python-format
+msgid "You must select an order to continue"
+msgstr "Debes seleecionar una orden para continuar"

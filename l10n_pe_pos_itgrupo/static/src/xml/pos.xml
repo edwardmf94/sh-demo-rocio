@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-extend="PaymentScreenWidget">
+		<t t-jquery=".js_set_customer" t-operation="after">
+			<t t-foreach="widget.pos.itgrupo_series" t-as="journal">
+				<div t-attf-class='button js_journalit #{ widget.pos.get_order() and widget.pos.get_order().get_sale_journalit() == journal.id ? "highlight" : ""} ' t-att-data-journal="journal.id">
+					<i class='fa fa-money' /> <t t-esc="journal.display_name" />
+				</div>
+			</t>
+		</t>
+	</t>
+
+    <t t-extend="PosOrderLineWidget">
+    	<t t-jquery=".order-invoice-name" t-operation="replace">
+            <td class="order-invoice-name"><t t-esc="order.offline_invoice_number"/></td>
+        </t>
+    </t>
+</templates>

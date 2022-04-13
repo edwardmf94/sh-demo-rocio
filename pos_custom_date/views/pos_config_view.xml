@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_pos_config_extra_form_forced_date" model="ir.ui.view">
+		<field name="name">pos.config_extra.form.view</field>
+		<field name="model">pos.config</field>
+		<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='pos_base']" position="inside">
+				<div class="col-xs-12 col-md-6 o_setting_box"
+						title="Allow Forced Date">
+					<div class="o_setting_left_pane">
+						<field name="allow_outdate"/>
+					</div>
+					<div class="o_setting_right_pane">
+						<label for="allow_outdate" string="Allow Forced Date"/>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

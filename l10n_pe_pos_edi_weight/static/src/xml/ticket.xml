@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="PosTicketInvoice">
+		<t t-jquery='.receipt-orderlines' t-operation='replace'>
+			<table class='receipt-orderlines' width="100%">
+				<colgroup>
+					<col width='25%' />
+					<col width='25%' />
+					<col width='25%' />
+					<col width='25%' />
+				</colgroup>
+				<tr>
+					<td class="pos-center-align">DESCR.</td>
+					<td class="pos-center-align">CANT</td>
+					<td class="pos-center-align">UNI</td>
+					<td class="pos-center-align">TOTAL</td>
+				</tr>
+				<t t-foreach="orderlines" t-as="orderline">
+					<tr>
+						<td colspan="4">
+							<t t-if="orderline.product_name">
+								<t t-esc="orderline.product_name"/>
+							</t>
+							<t t-if="!orderline.product_name">
+								<t t-esc="orderline.get_product().display_name"/>
+							</t>
+							<t t-if='orderline.total_weight > 0'>
+								<span class="pos-disc-font">(<t t-esc='orderline.total_weight'/> KG)</span>
+							</t>
+							<t t-if="orderline.get_discount() > 0">
+								<div class="pos-disc-font">
+									With a <t t-esc="orderline.get_discount()"/>% discount
+								</div>
+							</t>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="pos-right-align">
+							<t t-if="document_type.code != '07'">
+							<t t-esc="orderline.get_quantity_str_with_unit()"/>
+						</t>
+							<t t-if="document_type.code == '07'">
+								<t t-esc="orderline.get_quantity_credit()"/>
+							</t>
+						</td>
+						<td class="pos-right-align line_price_unit">
+							<t t-esc="orderline.get_unit_price().toFixed(2)"/>
+						</td>
+						<td class="pos-right-align">
+							<t t-if="document_type.code != '07'">
+								<t t-esc="orderline.get_display_price().toFixed(2)"/>
+							</t>
+							<t t-if="document_type.code == '07'">
+								<t t-esc="orderline.get_display_price_credit().toFixed(2)"/>
+							</t>
+						</td>
+					</tr>
+				</t>
+			</table>
+		</t>
+		<t t-jquery='.receipt-change' t-operation='after'>
+			<br/>
+			<table class='receipt-weight' width="100%" t-if="order.total_weight > 0">
+				<tr style="font-size:13;">
+					<td>PESO TOTAL:</td>
+					<td class="pos-right-align">
+						<t t-esc="order.total_weight"/> KG
+					</td>
+				</tr>
+			</table>
+		</t>
+	</t>
+    <t t-extend="XmlInvoiceReceipt">
+		<t t-jquery='.receipt-change' t-operation='after'>
+			<br/>
+			<table class='receipt-weight' t-if="order.total_weight > 0">
+				<tr>
+					<td style="font-size:12;" align="left" width="0.6">PESO TOTAL:</td>
+					<td style="font-size:12;" align="right" width="0.4">
+						<t t-esc="order.total_weight"/> KG
+					</td>
+				</tr>
+			</table>
+		</t>
+	</t>
+</templates>

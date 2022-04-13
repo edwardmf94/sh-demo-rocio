@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_gifts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 14:51+0000\n"
+"PO-Revision-Date: 2021-02-19 14:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cancel"
+msgstr ""
+
+#. module: pos_gifts
+#: model_terms:ir.ui.view,arch_db:pos_gifts.view_pos_config_lan
+msgid "Enable Gifts"
+msgstr ""
+
+#. module: pos_gifts
+#: model:ir.model.fields,field_description:pos_gifts.field_pos_config__pos_gifts
+#: model_terms:ir.ui.view,arch_db:pos_gifts.view_pos_config_lan
+msgid "Enable Taxes Free in Product"
+msgstr ""
+
+#. module: pos_gifts
+#: model:ir.model,name:pos_gifts.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#, python-format
+msgid "Required select a orderline"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#, python-format
+msgid "Required select a tax"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/xml/pos.xml:0
+#, python-format
+msgid "SET TAX"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#, python-format
+msgid "Select a orderline"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/js/popups.js:0
+#, python-format
+msgid "Select a tax"
+msgstr ""
+
+#. module: pos_gifts
+#. openerp-web
+#: code:addons/pos_gifts/static/src/xml/pos.xml:0
+#, python-format
+msgid "Select the Tax to Apply"
+msgstr ""

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="LocalOrdersListScreenWidget">
+        <t t-jquery="table.invoice-list thead tr" t-operation="append">
+			<th name="thTable">Table</th>
+		</t>
+	</t>
+
+    <t t-extend="LocalOrdersLineWidget">
+        <t t-jquery="tr.listview-line" t-operation="append">
+			<td t-if='widget.pos.config.iface_floorplan'>
+				<t t-if="order.table">
+					<t t-esc="order.table"/> (<t t-esc="order.floor"/>)
+				</t>
+			</td>
+    	</t>
+    </t>
+
+</templates>

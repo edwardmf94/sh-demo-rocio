@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="view_pos_config_l10n_pe_force_journal" model="ir.ui.view">
+		<field name="name">pos.config.form.l10n.pe.force</field>
+		<field name="model">pos.config</field>
+		<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='pos_base']" position="inside">
+				<div class="col-12 col-lg-6 o_setting_box">
+					<div class="o_setting_left_pane">
+						<field name="force_journal"/>
+					</div>
+					<div class="o_setting_right_pane">
+						<label for="force_journal" string="Forzar elegir diario"/>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="pos_coupons" xml:space="preserve">
+	<t t-extend="XmlReceipt">
+		<t t-jquery='.before-footer' t-operation='after'>
+			<t t-if="order.get_coupon_id()">
+				<table class='receipt-coupon'>
+					<tr><td style="font-size:12;" align="left" width="0.6">Cupón aplicado:</td><td style="font-size:12;" align="right" width="0.4"><t t-esc="order.get_coupon_id().code"/></td></tr>
+				</table>
+			</t>
+		</t>
+		<t t-jquery='.final-footer' t-operation='after'>
+			<t t-if="order.get_coupon_program()">
+				<t t-foreach="order.get_coupon_program()" t-as="program">
+					<cut />
+					<line align='center'><t t-esc="program.title"/></line>
+					<line align='center'>Use this promotional code before <t t-esc="program.due_date"/></line>
+					<line align='center'>Válido por compras por encima de <t t-esc="widget.format_currency(program.minimun)"/></line><br />
+					<barcode><t t-esc="program.coupon_uid" /></barcode>
+				</t>
+			</t>
+		</t>
+	</t>
+</templates>

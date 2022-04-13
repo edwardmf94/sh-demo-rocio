@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_session_arching_view_pos_credit" inherit_id="pos_summary.report_session_arching_view">
+            <xpath expr="//table[@id='gastos-varios']" position="after">
+				<table class="table table-condensed" id="detalle-credito">
+					<t t-set="amount_total_credit" t-value="0"/>
+					<colgroup>
+						<col width="20%"/>
+						<col width="40%"/>
+						<col width="20%"/>
+						<col width="20%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="4" style="text-align:center;">
+								DETALLE DE CREDITO
+							</th>
+						</tr>
+						<tr>
+							<th style="text-align:center;" width="17%">RUC</th>
+							<th style="text-align:center;" width="12%">Cliente</th>
+							<th style="text-align:center;" width="25%">Comprobante</th>
+							<th style="text-align:right;" width="9%">Monto total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr t-foreach="session.get_info_partner_has_credit()" t-as="r">
+							<td><span t-esc="r['partner_vat']"/></td>
+							<td><span t-esc="r['partner_name']"/></td>
+							<td><span t-esc="r['invoice_name']"/></td>
+							<td style="text-align: right;"><span t-esc="r['amount_total']"/></td>
+							<t t-set="amount_total_credit" t-value="amount_total_credit+r['amount_total']"/>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+							<td style="text-align: right;"><strong><span t-esc="round(amount_total_credit, 2)" /></strong></td>
+						</tr>
+					</tfoot>
+				</table>
+            </xpath>
+        </template>
+    </data>
+</odoo>

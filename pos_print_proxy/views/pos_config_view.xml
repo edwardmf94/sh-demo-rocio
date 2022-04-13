@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_pos_config_extra_form_print" model="ir.ui.view">
+		<field name="name">pos.config_print.form.view</field>
+		<field name="model">pos.config</field>
+		<field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='pos_base']" position="inside">
+				<div class="col-xs-12 col-md-6 o_setting_box"
+					 title="Habilitar Impresion.">
+					<div class="o_setting_left_pane">
+						<field name="ihw_proxy"/>
+					</div>
+					<div class="o_setting_right_pane">
+						<label for="ihw_proxy" string="Habilitar Impresion"/>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 o_setting_box"
+					 title="Direccion Proxy" attrs="{'invisible': [('ihw_proxy','=',False)]}">
+					<div class="o_setting_left_pane">
+					</div>
+					<div class="o_setting_right_pane">
+                        <div class="content-group" attrs="{'invisible' : [('ihw_proxy', '=', False)]}">
+                            <div class="row">
+                                <label string="Direccion Proxy" for="ihw_url" class="col-lg-4 o_light_label"/>
+                                <field name="ihw_url"/>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 o_setting_box"
+					 title="Abrir caja al imprimir.">
+					<div class="o_setting_left_pane">
+						<field name="ihw_open_cashbox"/>
+					</div>
+					<div class="o_setting_right_pane">
+						<label for="ihw_open_cashbox" string="Abrir caja al imprimir"/>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_pos_pos_form" model="ir.ui.view">
+		<field name="name">pos.order.cancel.form</field>
+		<field name="model">pos.order</field>
+		<field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+		<field name="arch" type="xml">
+			<field name="picking_id" position="after">
+				<field name="picking_return_id" readonly="1" />
+			</field>
+            <button name="refund" position="after">
+                <button name="action_pos_order_cancel" string="Cancel Order" type="object" attrs="{'invisible':[('state','in',('cancel','draft','done'))]}"/>
+            </button>
+		</field>
+	</record>
+</odoo>

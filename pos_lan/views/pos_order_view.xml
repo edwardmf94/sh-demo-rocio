@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_pos_order_lan" model="ir.ui.view">
+			<field name="name">pos.order.form.lan</field>
+			<field name="model">pos.order</field>
+			<field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+			<field name="arch" type="xml">
+				<field name="partner_id" position="before">
+					<field name="seller_id"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</odoo>

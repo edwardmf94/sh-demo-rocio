@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_restrict_users
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20210115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 01:42+0000\n"
+"PO-Revision-Date: 2021-01-29 01:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_restrict_users
+#: model:ir.model.fields,field_description:pos_restrict_users.field_pos_config__restrict_old_session
+#: model_terms:ir.ui.view,arch_db:pos_restrict_users.view_pos_config_extra_restrict
+msgid "Forbid continuing a past session"
+msgstr ""
+
+#. module: pos_restrict_users
+#: model:ir.model,name:pos_restrict_users.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: pos_restrict_users
+#: model:ir.model,name:pos_restrict_users.model_pos_session
+msgid "Point of Sale Session"
+msgstr ""
+
+#. module: pos_restrict_users
+#: code:addons/pos_restrict_users/models/pos_config.py:0
+#, python-format
+msgid "You cannot resume a session from a past day."
+msgstr ""
+
+#. module: pos_restrict_users
+#: code:addons/pos_restrict_users/models/pos_session.py:0
+#, python-format
+msgid ""
+"Your ending balance is too different from the theoretical balance. You can "
+"contact your administrator to close it."
+msgstr ""

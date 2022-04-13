@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_pos_config_lan" model="ir.ui.view">
+			<field name="name">pos.config.form.sale</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[@id='pos_base']" position="inside">
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="allow_increase"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_increase" string="Habilitar incrementos globales"/>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="allow_discount"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="allow_discount" string="Habilitar descuentos globales"/>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="only_admin_discount"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="only_admin_discount" string="Solamente administradores puede dar descuentos"/>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="only_admin_increase"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="only_admin_increase" string="Solamente administradores puede dar incrementos"/>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

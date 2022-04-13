@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_stock_quantity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-05 00:19+0000\n"
+"PO-Revision-Date: 2021-02-05 00:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_config__allow_out_of_stock
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Allow Out-of-Stock"
+msgstr ""
+
+#. module: pos_stock_quantity
+#. openerp-web
+#: code:addons/pos_stock_quantity/static/src/xml/pos_stock.xml:0
+#, python-format
+msgid "Cancel"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_config__limit_qty
+msgid "Deny Order when Quantity Available lower than"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Deny order when quantity available lower than"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Display Stock"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_config__show_qty_available
+msgid "Display Stock in POS"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Hide Products"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_config__hide_product
+msgid "Hide Products not in POS Location"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Hide Products not in POS Location."
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__id
+msgid "ID"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_stock_channel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: pos_stock_quantity
+#. openerp-web
+#: code:addons/pos_stock_quantity/static/src/xml/pos_stock.xml:0
+#, python-format
+msgid "Maximum quantity available is"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Min Quantity"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model.fields,field_description:pos_stock_quantity.field_pos_config__location_only
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Only in POS Location"
+msgstr ""
+
+#. module: pos_stock_quantity
+#. openerp-web
+#: code:addons/pos_stock_quantity/static/src/xml/pos_stock.xml:0
+#, python-format
+msgid "Order"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model,name:pos_stock_quantity.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Pos Stock"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model,name:pos_stock_quantity.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model_terms:ir.ui.view,arch_db:pos_stock_quantity.pos_config
+msgid "Show quantity available in POS."
+msgstr ""
+
+#. module: pos_stock_quantity
+#: model:ir.model,name:pos_stock_quantity.model_pos_stock_channel
+msgid "pos.stock.channel"
+msgstr ""

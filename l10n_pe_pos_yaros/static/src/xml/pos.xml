@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-extend="PaymentScreenWidget">
+		<t t-jquery=".js_set_customer" t-operation="after">
+			<t t-foreach="widget.pos.yaros_series" t-as="journal">
+				<div t-attf-class='button js_journalyaros #{ widget.pos.get_order() and widget.pos.get_order().get_sale_journalyaros() == journal.id ? "highlight" : ""} ' t-att-data-journal="journal.id">
+					<i class='fa fa-money' /> <t t-esc="journal.display_name" />
+				</div>
+			</t>
+		</t>
+	</t>
+	<t t-extend="PosTicketInvoice">
+		<t t-jquery=".receipt-offline" t-operation="replace">
+			<span class="receipt-offline"><t t-esc="order.yaros_prefix_val"/>-<t t-esc="order.yaros_suffix_val"/></span>
+		</t>
+	</t>
+</templates>

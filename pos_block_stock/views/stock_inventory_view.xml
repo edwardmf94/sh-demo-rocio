@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inventory_form_pos_block" model="ir.ui.view">
+        <field name="name">view_inventory_form.pos_block</field>
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_form"/>
+        <field name="arch" type="xml">
+            <button name="action_cancel_draft" position="after">
+                <field name="pos_blocked" invisible="1"/>
+                <button name="action_pos_block" string="Bloquear Stock en POS" type="object"
+                    confirm="Esta operacion bloqueara los productos inventariados en el POS. ¿Desea continuar?"
+                    attrs="{'invisible': [('pos_blocked','=',True),('state','=','confirm')]}" />
+                <button name="action_pos_unblock" string="Desbloquear Stock en POS" type="object"
+                    confirm="Esta operacion desbloqueara los productos inventariados en el POS. ¿Desea continuar?"
+                    attrs="{'invisible': [('pos_blocked','=',False),('state','=','confirm')]}" />
+            </button>
+        </field>
+    </record>
+</odoo>

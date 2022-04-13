@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="l10n_pe_pos_coupons" xml:space="preserve">
+	<!-- l10n_pe_pos_edi -->
+	<t t-extend="PosTicketInvoice">
+		<t t-jquery='.receipt-change' t-operation='after'>
+			<t t-if="order.get_coupon_id()">
+				<div class="receipt-coupon">
+					Cupón aplicado: <span t-esc='order.get_coupon_id().code' class="pos-receipt-right-align"/>
+				</div>
+			</t>
+		</t>
+		<t t-jquery=".pos-receipt-qrcode" t-operation="after">
+			<t t-if="!reprint">
+				<t t-if="order.get_coupon_program()">
+					<t t-foreach="order.get_coupon_program()" t-as="program">
+						<hr/>
+						<div class="pos-receipt-center-align pos-receipt-contact">
+							<span><t t-esc="program.title"/></span><br/>
+							<span>Usa este código promocional antes de <t t-esc="program.due_date"/></span><br/>
+							<span>Código: <t t-esc="program.coupon_uid"/></span><br/>
+							<span>Válido por compras por encima de <t t-esc="widget.format_currency(program.minimun)"/></span><br/>
+						</div>
+						<img t-attf-src="/report/barcode/?type=Code128&amp;value=#{program.coupon_uid}&amp;width=280&amp;height=50"/>
+						<br/>
+					</t>
+				</t>
+			</t>
+		</t>
+	</t>
+	<!-- l10n_pe_pos_edi -->
+	<t t-extend="XmlInvoiceReceipt">
+		<t t-jquery='.receipt-change' t-operation='after'>
+			<t t-if="order.get_coupon_id()">
+				<table class='receipt-coupon'>
+					<tr><td style="font-size:12;" align="left" width="0.6">Cupón aplicado:</td><td style="font-size:12;" align="right" width="0.4"><t t-esc="order.get_coupon_id().code"/></td></tr>
+				</table>
+			</t>
+		</t>
+		<t t-jquery=".pos-receipt-qrcode" t-operation="after">
+			<t t-if="!reprint">
+				<t t-if="order.get_coupon_program()">
+					<t t-foreach="order.get_coupon_program()" t-as="program">
+						<cut />
+						<line align='center'><t t-esc="program.title"/></line>
+						<line align='center'>Use this promotional code before <t t-esc="program.due_date"/></line>
+						<line align='center'>Válido por compras por encima de <t t-esc="widget.format_currency(program.minimun)"/></line><br />
+						<barcode><t t-esc="program.coupon_uid" /></barcode>
+					</t>
+				</t>
+			</t>
+		</t>
+	</t>
+</templates>

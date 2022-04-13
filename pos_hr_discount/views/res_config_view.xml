@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_view_form_inherit_pos_hr_discount" model="ir.ui.view">
+        <field name="name">res.config.form.inherit.pos.hr_discount</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='point_of_sale']" position="inside" >
+                <h2>HR Discounts</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="pos_hr_discount_cashier"/>
+                            <div class="text-muted">
+                                Descuento de Cajero
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="pos_hr_discount_cashier"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="pos_hr_discount_manager"/>
+                            <div class="text-muted">
+                                Descuento de Jefe de Tienda
+                            </div>
+                            <div class="content-group mt16">
+                            <field name="pos_hr_discount_manager"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="pos_hr_discount_admin"/>
+                            <div class="text-muted">
+                                Descuento de SuperAdmin
+                            </div>
+                            <div class="content-group mt16">
+                            <field name="pos_hr_discount_admin"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

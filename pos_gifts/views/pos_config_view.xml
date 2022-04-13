@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_pos_config_lan" model="ir.ui.view">
+			<field name="name">pos.config.form.sale</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[@id='pos_base']" position="inside">
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="pos_gifts"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="pos_gifts" string="Enable Taxes Free in Product"/>
+							<div class="text-muted">
+								Enable Gifts
+							</div>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

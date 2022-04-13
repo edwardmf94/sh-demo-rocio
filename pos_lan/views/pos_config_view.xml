@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_pos_config_lan" model="ir.ui.view">
+			<field name="name">pos.config.form.sale</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[@id='pos_base']" position="inside">
+					<div class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="pos_lan"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="pos_lan" string="Enable Pharmacy mode: Cashier / Seller"/>
+							<div class="text-muted">
+								Enable Mode LAN
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" title="Enable dispatch printing"
+						attrs="{'invisible': [('pos_lan','=',False)]}">
+						<div class="o_setting_left_pane">
+							<field name="print_dispatch"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="print_dispatch" string="Enable dispatch printing (cashier and sellers)"/>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" title="Delete order on payment"
+						attrs="{'invisible': [('pos_lan','=',False)]}">
+						<div class="o_setting_left_pane">
+							<field name="pos_lan_delete"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="pos_lan_delete" string="Delete order on payment"/>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" title="Force to select employee on each order"
+						attrs="{'invisible': [('pos_lan','=',False)]}">
+						<div class="o_setting_left_pane">
+							<field name="pos_lan_hr_select"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="pos_lan_hr_select" string="Force to select employee on each order"/>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

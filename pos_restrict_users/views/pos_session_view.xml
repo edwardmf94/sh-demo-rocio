@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_pos_config_extra_form_restrict" model="ir.ui.view">
+		<field name="name">pos.config_extra.restrict.form.view</field>
+		<field name="model">pos.session</field>
+		<field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+		<field name="arch" type="xml">
+			<field name="cash_register_total_entry_encoding" position="attributes">
+				<attribute name="groups">point_of_sale.group_pos_manager</attribute>
+			</field>
+			<field name="cash_register_balance_end" position="attributes">
+				<attribute name="groups">point_of_sale.group_pos_manager</attribute>
+			</field>
+			<field name="cash_register_difference" position="attributes">
+				<attribute name="groups">point_of_sale.group_pos_manager</attribute>
+			</field>
+		</field>
+	</record>
+</odoo>

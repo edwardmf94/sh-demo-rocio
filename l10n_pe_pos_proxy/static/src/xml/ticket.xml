@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">	
+    <t t-name="XmlInvoiceReceipt">
+        <receipt>
+            <img />
+            <textdoubleheight/>
+            <line class="receipt-company" align="center" font="b"><t t-esc="widget.pos.company.name"/></line><br />
+            <textnormal/>
+            <line align="center" font="a" class="receipt-street"><t t-esc="widget.pos.config.company_branch_address"/></line>
+            <t t-if="receipt.phone">
+                <line class="receipt-phone" align="center">
+                    TELEFONO: <t t-esc="widget.pos.company.phone || ''"/>
+                </line>
+            </t>
+            <t t-if="receipt.header">
+                <line align="center" t-if="receipt.header!=''">
+                    <t t-esc="receipt.header" />
+                </line>
+            </t>
+            <line align="center" font="b">R.U.C.: <t t-esc="widget.pos.company.vat"/></line>
+            <t t-if="document_type.code == '03'">
+                <line align="center" font="b">BOLETA DE VENTA ELECTRONICA</line>
+            </t>
+            <t t-if="document_type.code == '01'">
+                <line align="center" font="b">FACTURA ELECTRONICA</line>
+            </t>
+            <t t-if="document_type.code == '07'">
+                <line align="center" font="b">NOTA DE CRÉDITO ELECTRONICA</line>
+            </t>
+            <t t-if="document_type.code == '08'">
+                <line align="center" font="b">NOTA DE DÉBITO ELECTRONICA</line>
+            </t>
+            <line font="a"><t t-esc="order.offline_invoice_number"/></line>
+            <line class="receipt-fecha" align="left">
+                FECHA: <t t-esc="receipt.date.localestring"/>
+            </line>
+            <line class="receipt-client-vat-type" t-if="order.get_client()">
+                <t t-esc="client_document_type.name"/>: <t t-esc="order.get_client().vat"/>
+            </line>
+            <line class="receipt-client-name" t-if="order.get_client()">
+                NOMBRE: <t t-esc="order.get_client_name_xml()"/>
+            </line>
+            <t t-if="order.get_client().street">
+                <t t-if="order.get_client().street!='false'">
+                    <line>DIRECCION: <t t-esc="order.get_client().street"/></line>
+                </t>
+            </t>
+            <line class="receipt-paymentterm">
+                CONDICION: <t t-esc="payment_term"/>
+            </line>
+            <line class="receipt-datedue">
+                VENCIMIENTO: <t t-esc="order.get_date_due()"/>
+            </line>
+            <t t-if="document_type.code == '07'">
+                <line class="receipt-creditreason">
+                    TIPO N.CRED.: <t t-esc="order.get_credit_note_type_name()"/>
+                </line>
+                <line class="receipt-creditreason">
+                    D.MODIFICADO: <t t-esc="order.get_credit_note_origin()"/>
+                </line>
+            </t>
+            <br/>
+            <table class='receipt-orderlines'>
+                <tr>
+                    <td width="0.15" align="left" font="b">DESCR.</td>
+                    <td width="0.35" align="center" font="b">CANT</td>
+                    <td width="0.25" align="right" font="b">P.UNIT</td>
+                    <td width="0.25" align="right" font="b">P.TOTAL</td>
+                </tr>
+                <t t-foreach="orderlines" t-as="orderline">
+                    <tr class="tr_product">
+                        <td width="1" align="left">
+                            <t t-esc="orderline.get_product_xml()"/>
+                        </td>
+                    </tr>
+                    <t t-if="orderline.get_discount() > 0">
+                        <tr>
+                            <td width="1" align="left">
+                                Con un <t t-esc="orderline.get_discount()"/>% de descuento
+                            </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td width="0.15"></td>
+                        <td width="0.35">
+                            <t t-if="document_type.code != '07'">
+                                <t t-esc="orderline.get_quantity_str_with_unit()"/> <t t-esc="orderline.get_uom_str()"/>
+                            </t>
+                            <t t-if="document_type.code == '07'">
+                                <t t-esc="orderline.get_quantity_credit()"/> <t t-esc="orderline.get_uom_str()"/>
+                            </t>
+                        </td>
+                        <td width="0.25" align="right" class="line_price_unit">
+                            <t t-esc="orderline.get_unit_price().toFixed(2)"/>
+                        </td>                        
+                        <td width="0.25" align="right">
+                            <t t-if="document_type.code != '07'">
+                                <t t-esc="orderline.get_display_price().toFixed(2)"/>
+                            </t>
+                            <t t-if="document_type.code == '07'">
+                                <t t-esc="orderline.get_display_price_credit().toFixed(2)"/>
+                            </t>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+            <table>
+                <tr><td align="right">OP. GRAVADA:</td><td align="right"><t t-esc="Math.abs(order.get_total_without_tax()).toFixed(2)"/></td></tr>
+            </table>
+            <table t-if="order.get_total_exonerated() > 0">
+                <tr><td align="right">OP. EXONERADA:</td><td align="right"><t t-esc="Math.abs(order.get_total_exonerated()).toFixed(2)"/></td></tr>
+            </table>
+            <table t-if="order.get_total_innafected() > 0">
+                <tr><td align="right">OP. INAFECTA:</td><td align="right"><t t-esc="Math.abs(order.get_total_innafected()).toFixed(2)"/></td></tr>
+            </table>
+            <table t-if="order.get_total_gift() > 0">
+                <tr><td align="right">OP. GRATUITA:</td><td align="right"><t t-esc="Math.abs(order.get_total_gift()).toFixed(2)"/></td></tr>
+            </table>
+            <t t-foreach="order.get_tax_details()" t-as="taxdetail">
+                <table>
+                    <tr><td align="right"><t t-esc="taxdetail.name" />:</td><td align="right"><t t-esc="Math.abs(taxdetail.amount).toFixed(2)"/></td></tr>
+                </table>
+            </t>
+            <table t-if="order.get_total_discount() > 0">
+                <tr><td align="right">DSCTO.:</td><td align="left"><t t-esc="Math.abs(order.get_total_discount()).toFixed(2)"/></td></tr>
+            </table>
+
+            <table t-if="order.get_total_perception() > 0">
+                <tr>
+                    <td width="0.5" align="right">TOTAL:</td>
+                    <td width="0.5" align="right">
+                        <t t-esc="order.get_total_without_perception().toFixed(2)"/>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td width="0.6" t-if="order.get_total_perception() == 0" align="right">TOTAL:</td>
+                    <td width="0.6" t-if="order.get_total_perception() > 0" align="right">TOTAL INC. PERCEPCION:</td>
+                    <td width="0.4" align="right">
+                        <t t-if="document_type.code != '07'">
+                            <t t-esc="order.get_total_with_tax().toFixed(2)"/>
+                        </t>
+                        <t t-if="document_type.code == '07'">
+                            <t t-esc="order.get_total_with_tax_credit().toFixed(2)"/>
+                        </t>
+                    </td>
+                </tr>
+            </table>
+            
+            <line class="receipt-textamount" align="left">
+                SON: <t t-esc="order.getAmountText()"/>
+            </line>
+            <br/>
+            <t t-foreach="paymentlines" t-as="line">
+                <table>
+                    <tr>
+                        <td align="left" width="0.6"><t t-esc="line.name"/>:</td><td align="right" font="b" width="0.4"><t t-esc="widget.format_currency(line.get_amount())"/></td>
+                    </tr>
+                </table>
+            </t>
+            <table class='receipt-change'>
+                <tr><td style="font-size:12;" align="left" width="0.6">VUELTO:</td><td style="font-size:12;" align="right" width="0.4"><t t-esc="widget.format_currency(order.get_change())"/></td></tr>
+            </table>
+            <!--<t t-if="order.get_global_discount()">
+                <line class="receipt-discount" align="left">
+                    DESCUENTO: <t t-esc="order.get_global_discount().name"/>
+                </line>
+            </t>-->
+            <line class="receipt-total-items" align="left">
+                TOTAL ITEMS: <t t-esc="order.getTotalItems()"/>
+            </line>
+            <line class="receipt-cashier" align="left">
+                CAJERO: <t t-esc="widget.pos.get_cashier().name"/>
+            </line>
+            <line class="receipt-session" align="left">
+                SESION POS: <t t-esc="widget.pos.config.current_session_id[1]"/>
+            </line>
+            <line class="receipt-sequence" align="left">
+                SECUENCIA POS: <t t-esc="order.name"/>
+            </line>
+            <br />
+            <line t-if="document_type.code == '03'" align="center">
+                Representacion impresa de la BOLETA DE VENTA ELECTRONICA, para consultar el documento visita https://see.conflux.pe<br/>
+                Autorizado mediante Resolución de intendencia Nro. 2140050001193/SUNAT<br /><br />
+            </line>
+            <line t-if="document_type.code == '01'" align="center">
+                Representacion impresa de la FACTURA ELECTRONICA, para consultar el documento visita https://see.conflux.pe<br/>
+                Autorizado mediante Resolución de intendencia Nro. 2140050001193/SUNAT<br /><br />
+            </line>
+            <line t-if="document_type.code == '07'" align="center">
+                Representacion impresa de la NOTA DE CRÉDITO ELECTRONICA, para consultar el documento visita https://see.conflux.pe<br/>
+                Autorizado mediante Resolución de intendencia Nro. 2140050001193/SUNAT<br /><br />
+            </line>
+            <line t-if="document_type.code == '08'" align="center">
+                Representacion impresa de la NOTA DE DÉBITO ELECTRONICA, para consultar el documento visita https://see.conflux.pe<br/>
+                Autorizado mediante Resolucion de intendencia Nro. 2140050001193/SUNAT<br /><br />
+            </line>
+            <qrcode class="pos-receipt-qrcode"><t t-esc="order.get_qr()" /></qrcode>
+            <t t-if="receipt.footer">
+                <line align="center" t-if="receipt.footer!=''">
+                    <t t-esc="receipt.footer" />
+                </line>
+            </t>
+            <line t-if="reprint" align="center">
+                COPIA REIMPRESA
+            </line>
+        </receipt>
+    </t>
+</templates>

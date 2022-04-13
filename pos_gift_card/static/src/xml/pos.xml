@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-extend="PaymentScreen-Paymentlines">
+        <t t-jquery=".col-name" t-operation="append">
+            <t t-if="line.payment_method.gift_voucher">
+                <span class='payment-info-button' t-att-data-cid='line.cid'><i class='fa fa-bank' /></span>
+            </t>
+        </t>
+    </t>
+	
+    <t t-name="VoucherInfoWidget">
+        <div class='modal-dialog'>
+            <div class='popup popup-paymentrefinfo'>
+                <p class='title'>Please enter Gift Card Reference</p>
+                <div class='paymentrefinfo-detail'>
+                    <span class='label' style='color:black'>Gift Card Reference</span>
+                    <input class='detail' name='gift_voucher_ref' t-att-value='widget.options.gift_voucher_ref' placeholder='Payment Ref'></input>
+                </div>
+                <div class='footer'>
+                    <div class='button confirm'>
+                        Confirm 
+                    </div>
+                    <div class='button cancel'>
+                        Cancel 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

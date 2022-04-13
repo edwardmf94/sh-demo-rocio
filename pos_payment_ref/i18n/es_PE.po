@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_payment_ref
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20210115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-27 16:50+0000\n"
+"PO-Revision-Date: 2021-01-27 16:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_payment_ref
+#. openerp-web
+#: code:addons/pos_payment_ref/static/src/xml/pos_payment_ref.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_payment_ref
+#. openerp-web
+#: code:addons/pos_payment_ref/static/src/xml/pos_payment_ref.xml:0
+#, python-format
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: pos_payment_ref
+#: model:ir.model.fields,field_description:pos_payment_ref.field_pos_payment_method__pos_payment_ref
+msgid "Enable ref"
+msgstr "Habilitar referencia"
+
+#. module: pos_payment_ref
+#. openerp-web
+#: code:addons/pos_payment_ref/static/src/xml/pos_payment_ref.xml:0
+#, python-format
+msgid "Payment Ref"
+msgstr "Referencia de pago"
+
+#. module: pos_payment_ref
+#. openerp-web
+#: code:addons/pos_payment_ref/static/src/xml/pos_payment_ref.xml:0
+#, python-format
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: pos_payment_ref
+#. openerp-web
+#: code:addons/pos_payment_ref/static/src/xml/pos_payment_ref.xml:0
+#, python-format
+msgid "Please enter Payment Reference"
+msgstr "Por favor, ingrese la referencia de pago"
+
+#. module: pos_payment_ref
+#: model:ir.model,name:pos_payment_ref.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos de Punto de Venta"
+
+#. module: pos_payment_ref
+#: model:ir.model,name:pos_payment_ref.model_pos_payment_method
+msgid "Point of Sale Payment Methods"
+msgstr "Métodos de pago en el punto de venta"

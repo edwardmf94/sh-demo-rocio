@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="session_collection"
+            model="pos.session"
+            string="Cobranza"
+            report_type="qweb-pdf"
+            name="pos_credit.report_session_collection_view"
+            file="pos_credit.report_session_collection"
+            groups="point_of_sale.group_pos_manager"
+            attachment_use="False"
+        />
+
+        <template id="report_session_collection_view">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <style>
+                            .page {
+                                font-size:11px;
+                            }
+                            .page table {
+                                width:100%;
+                            }
+                            .page table > thead > tr > th {
+                                padding: 0px 3px;
+                            }
+                            .page table > thead > tr:last-child th {
+                                border-bottom: 1px solid black;
+                            }
+                            .page table > tbody > tr > td {
+                                padding: 0px 3px;
+                            }
+                            .page table .border-top{
+                                border-top:1px solid black;
+                            }
+                            .page table .data-border {
+                                border-top: 1px solid gray;
+                            }
+                        </style>
+                        <t t-foreach="data['session_ids']" t-as="session">
+                            <h3 class="text-center"><strong>COBRANZA: <span t-esc="session['name']"/></strong></h3>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <td>
+                                        <strong>Compañia:</strong> <span t-esc="res_company.name"/>
+                                    </td>
+                                    <td>
+                                        <strong>Direccion:</strong> <span t-esc="res_company.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>RUC:</strong> <span t-esc="res_company.partner_id.vat"/>
+                                    </td>
+                                    <td>
+                                        <strong>Telefono:</strong> <span t-esc="res_company.phone"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Punto de Venta:</strong> <span t-esc="session['config_id']['name']"/>
+                                    </td>
+                                    <td>
+                                        <strong>Responsable:</strong> <span t-esc="session['user_id']['name']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Fecha/Hora Apertura:</strong> <span t-esc="data['fecha_inicio'][session['id']]"/>
+                                    </td>
+                                    <td>
+                                        <strong>Fecha/Hora Cierre:</strong> <span t-esc="data['fecha_cierre'][session['id']]"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Saldo Apertura:</strong> <span t-esc="round(session['cash_register_balance_start'], 2)"/>
+                                    </td>
+                                    <td>
+                                        <strong>Saldo Cierre:</strong> <span t-esc="round(session['cash_register_balance_end_real'], 2)"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <t t-set="collection" t-value="session.get_collection_credit(session['id'])"/>
+                            <t t-set="summary" t-value="session.get_summary_credit(session['id'])"/>
+                            <table class="table table-condensed" id="tabla-contado">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" style="text-align:center;">
+                                            CONTADO
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:left;"></th>
+                                        <th style="text-align:left;">NRO.COMP.SER.NUM.</th>
+                                        <th style="text-align:left;">NRO.RUC.</th>
+                                        <th style="text-align:left;">RAZON SOCIAL</th>
+                                        <th style="text-align:right;">T. VENTA</th>
+                                        <th style="text-align:right;">COBRAMOS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <t t-set="total_contado_t" t-value="0" />
+                                <t t-set="total_contado_p" t-value="0" />
+                                <tr t-foreach="collection['contado']" t-as="order">
+                                    <td style="text-align:left;"><span t-esc="order['type_invoice']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['number']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['vat']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['partner_name']"/></td>
+                                    <td style="text-align:right;"><span t-esc="round(order['amount_total'], 2)"/></td>
+                                    <td style="text-align:right;"><span t-esc="round(order['paid_amount'], 2)"/></td>
+                                    <t t-set="total_contado_t" t-value="total_contado_t+order['amount_total']" />
+                                    <t t-set="total_contado_p" t-value="total_contado_p+order['paid_amount']" />
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_contado_t, 2)" /></strong></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_contado_p, 2)" /></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="table table-condensed" id="tabla-credito">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" style="text-align:center;">
+                                            CREDITO
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:left;"></th>
+                                        <th style="text-align:left;">NRO.COMP.SER.NUM.</th>
+                                        <th style="text-align:left;">NRO.RUC.</th>
+                                        <th style="text-align:left;">RAZON SOCIAL</th>
+                                        <th style="text-align:right;">T. VENTA</th>
+                                        <th style="text-align:right;">COBRAMOS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <t t-set="total_credito_t" t-value="0" />
+                                <t t-set="total_credito_p" t-value="0" />
+                                <tr t-foreach="collection['credito']" t-as="order">
+                                    <td style="text-align:left;"><span t-esc="order['type_invoice']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['number']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['vat']"/></td>
+                                    <td style="text-align:left;"><span t-esc="order['partner_name']"/></td>
+                                    <td style="text-align:right;"><span t-esc="round(order['amount_total'], 2)"/></td>
+                                    <td style="text-align:right;"><span t-esc="round(order['paid_amount'], 2)"/></td>
+                                    <t t-set="total_credito_t" t-value="total_credito_t+order['amount_total']" />
+                                    <t t-set="total_credito_p" t-value="total_credito_p+order['paid_amount']" />
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_credito_t, 2)" /></strong></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_credito_p, 2)" /></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="table table-condensed" id="tabla-cobranzas">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5" style="text-align:center;">
+                                            COBRANZAS
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:left;">NRO.RUC.</th>
+                                        <th style="text-align:left;">RAZON SOCIAL</th>
+                                        <th style="text-align:left;">DESCRIP.</th>
+                                        <th style="text-align:right;">IMPORTE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <t t-set="total_cash_in" t-value="0" />
+                                <tr t-foreach="data['cash_in'][session['id']]" t-as="lline">
+                                    <td><span t-esc="lline['vat']"/></td>
+                                    <td><span t-esc="lline['partner']"/></td>
+                                    <td><span t-esc="lline['descr']"/></td>
+                                    <td style="text-align: right;"><span t-esc="round(lline['amount'], 2)"/></td>
+                                    <t t-set="total_cash_in" t-value="total_cash_in+lline['amount']" />
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3"></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_cash_in, 2)" /></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="table table-condensed" id="tabla-otros">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5" style="text-align:center;">
+                                            OTROS MOVIMIENTOS
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align:left;">NRO.RUC.</th>
+                                        <th style="text-align:left;">RAZON SOCIAL</th>
+                                        <th style="text-align:left;">DESCRIP.</th>
+                                        <th style="text-align:right;">IMPORTE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <t t-set="total_cash_out" t-value="0" />
+                                <tr t-foreach="data['cash_out'][session['id']]" t-as="lline">
+                                    <td><span t-esc="lline['vat']"/></td>
+                                    <td><span t-esc="lline['partner']"/></td>
+                                    <td><span t-esc="lline['descr']" /></td>
+                                    <td style="text-align: right;"><span t-esc="round(lline['amount'], 2)"/></td>
+                                    <t t-set="total_cash_out" t-value="total_cash_out+lline['amount']" />
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3"></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_cash_out, 2)" /></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <table class="table table-condensed" id="tabla-detalle-formas-pago">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3" style="text-align:center;">
+                                            DETALLE DE FORMAS DE PAGO
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th width="50%">REFERENCIA</th>
+                                        <th style="text-align:center;">NRO. TRANS.</th>
+                                        <th style="text-align:right;">IMPORTE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <t t-set="total_amount_journal" t-value="0"/>
+                                <tr t-foreach="summary['data']['sales_by_journal']" t-as="journal">
+                                    <td><span t-esc="journal['name']" /></td>
+                                    <td style="text-align: center;"><span t-esc="journal['count_transactions']" /></td>
+                                    <td style="text-align: right;"><span t-esc="round(journal['amount'], 2)"/></td>
+                                    <t t-set="total_amount_journal" t-value="total_amount_journal + journal['amount']" />
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2"></td>
+                                        <td style="text-align: right;"><strong><span t-esc="round(total_amount_journal, 2)" /></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <p style="page-break-after:always;"></p>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

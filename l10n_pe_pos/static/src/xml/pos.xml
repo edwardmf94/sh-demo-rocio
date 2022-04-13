@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="customer" xml:space="preserve">
+	<t t-extend="PaymentScreenWidget">
+		<t t-jquery=".js_set_customer" t-operation="after">
+			<t t-foreach="widget.pos.journal_sale_ids" t-as="journal">
+				<div t-attf-class='button js_journal #{ widget.pos.get_order() and widget.pos.get_order().get_sale_journal() == journal.id ? "highlight" : ""} ' t-att-data-journal="journal.id">
+					<i class='fa fa-money' /> <t t-esc="journal.name" />
+				</div>
+			</t>
+		</t>
+	</t>
+</templates>

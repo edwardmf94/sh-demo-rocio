@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="div.centerpane" t-operation="append">
+            <button name="btnVer">PO LISTA</button>
+        </t>
+    </t>
+
+    <t t-name="PosOrderLineWidget">
+        <tr class="listview-line" t-att-data-order-id="order.id" t-att-data-order-name="order.name"
+            t-att-data-order-date="order.date_order" t-att-data-order-invoice-number="order.account_move_name">
+            <td><t t-esc="order.partner_id[1]"/></td>
+            <td><t t-esc="order.date_order"/></td>
+            <td><t t-esc="order.name"/></td>
+            <td class="order-invoice-name"><t t-esc="order.account_move_name"/></td>
+            <td><t t-esc="order.user_id[1]"/></td>
+            <td style="text-align:right;"><t t-esc="order.amount_total"/></td>
+            <td class="order-state"><t t-esc="order.state"/></td>
+        </tr>
+    </t>
+
+    <t t-name="PosOrderListScreenWidget">
+        <div class="listview-screen pos_order_list-screen screen">
+            <div class="screen-content" style="max-width:1280px;">
+                <section class="top-content historic">
+                    <div style="width:100%;text-align:left">
+                        <div class='historic-buttons' style="display:inline-block;width:60%;">
+                            <div class='button back' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;">
+                                <i class='fa fa-angle-double-left'></i>
+                                Atrás
+                            </div>
+                            <div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnDuplicate">
+                                Duplicar
+                            </div>
+                        </div>
+                        <div class='historic-searchboxs' style="display:inline-block;width:35%;text-align:right">
+                            <span class='searchbox' style="display:inline-block;position:initial;">
+                                <input placeholder='Buscar... + Enter' style="width: 200px;" />
+                                <span class='search-clear'></span>
+                            </span>
+                            <span class='searchbox'></span>
+                            <div class='button'>
+                                <select class="all_sessions">
+                                    <option value="0">Solo esta sesion</option>
+                                    <option value="1">Todas las sesiones</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='invoice-list'>
+                                        <colgroup>
+                                            <col width='20%' />
+                                            <col width='15%' />
+                                            <col width='15%' />
+                                            <col width='15%' />
+                                            <col width='15%' />
+                                            <col width='10%' />
+                                            <col width='10%' />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>Cliente</th>
+                                                <th>Fecha de emision</th>
+                                                <th>Secuencia</th>
+                                                <th>Comprobante</th>
+                                                <th>Cajero</th>
+                                                <th>Total</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='pos-orders-contents'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+</templates>

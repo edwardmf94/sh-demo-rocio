@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="PosOrderLineWidget">
+        <t t-jquery='tr' t-operation='replace'>
+            <tr class="listview-line" t-att-data-order-id="order.id" t-att-data-order-name="order.name" t-att-data-order-cancel="order.cancel"
+                t-att-data-order-date="order.date_order" t-att-data-order-invoice-number="order.account_move_name">
+                <td><t t-esc="order.partner_id[1]"/></td>
+                <td><t t-esc="order.date_order"/></td>
+                <td><t t-esc="order.name"/></td>
+                <td class="order-invoice-name"><t t-esc="order.account_move_name"/></td>
+                <td><t t-esc="order.user_id[1]"/></td>
+                <td style="text-align:right;"><t t-esc="order.amount_total"/></td>
+                <t t-jquery='.order-state' t-operation='replace'>
+                    <t t-if="order.cancel and order.amount_total>0">
+                        <td class="order-state" style="color:red;">ANULADA</td>
+                    </t>
+                    <t t-if="order.cancel and order.amount_total&lt;=0">
+                        <td class="order-state" style="color:red;">DEVOLUCION</td>
+                    </t>
+                    <t t-if="!order.cancel">
+                        <td class="order-state"><t t-esc="order.state"/></td>
+                    </t>
+                </t>
+            </tr>
+        </t>
+    </t>
+
+    <t t-extend="PosOrderListScreenWidget">
+        <t t-jquery='.historic-buttons' t-operation='append'>
+            <div class='button highlight' name="btnAnnul" style="display:inline-block;position:initial;margin:12px 2px 12px 2px;">
+                Anular
+            </div>
+            <div class='button highlight' name="btnNCredit" style="display:inline-block;position:initial;margin:12px 2px 12px 2px;">
+                N.de Cred.
+            </div>
+        </t>
+    </t>
+
+</templates>

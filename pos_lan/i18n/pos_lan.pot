@@ -1,0 +1,331 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_lan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-09 22:59+0000\n"
+"PO-Revision-Date: 2021-02-09 22:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "% discount"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "AMOUNT TOTAL:"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Back"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "CLIENT:"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Can not execute this action because the POS is currently offline"
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model.fields,field_description:pos_lan.field_hr_employee__pos_cashier
+msgid "Cashier (Pharmacy Mode)"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Change Cashier"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Client"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Configure a proxy for saving local orders."
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Connection error"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "DATE:"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "DESCR."
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model,name:pos_lan.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Empty Serial/Lot Number"
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model.fields,field_description:pos_lan.field_pos_config__pos_lan
+msgid "Enable Cashier / Seller mode"
+msgstr ""
+
+#. module: pos_lan
+#: model_terms:ir.ui.view,arch_db:pos_lan.view_pos_config_lan
+msgid "Enable Mode LAN"
+msgstr ""
+
+#. module: pos_lan
+#: model_terms:ir.ui.view,arch_db:pos_lan.view_pos_config_lan
+msgid "Enable Pharmacy mode: Cashier / Seller"
+msgstr ""
+
+#. module: pos_lan
+#: model_terms:ir.ui.view,arch_db:pos_lan.view_pos_config_lan
+msgid "Enable dispatch printing"
+msgstr ""
+
+#. module: pos_lan
+#: model_terms:ir.ui.view,arch_db:pos_lan.view_pos_config_lan
+msgid "Enable dispatch printing (cashier and sellers)"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Error de conexión"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Generate Receipt"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "INTERNAL CONTROL"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "No connection to the proxy"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "One or more product(s) required serial/lot number."
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Order "
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Order ready for box"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "PICKING"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Pay"
+msgstr ""
+
+#. module: pos_lan
+#: model_terms:ir.ui.view,arch_db:pos_lan.hr_employee_form_view_inherit_pos_lan
+msgid "Point of Sale"
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model,name:pos_lan.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model,name:pos_lan.model_pos_order
+msgid "Point of Sale Orders"
+msgstr ""
+
+#. module: pos_lan
+#: model:ir.model.fields,field_description:pos_lan.field_pos_config__print_dispatch
+msgid "Print order in dispatch"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "QTY"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "RECEIVE"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "SAVE"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "SELLER:"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#: code:addons/pos_lan/static/src/js/screens.js:0
+#, python-format
+msgid "Save"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Search... + Enter"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: model:ir.model.fields,field_description:pos_lan.field_pos_order__seller_id
+#, python-format
+msgid "Seller"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Sequence"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "TOTAL"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "TOTAL ITEMS:"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "UOM"
+msgstr ""
+
+#. module: pos_lan
+#. openerp-web
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#: code:addons/pos_lan/static/src/xml/pos.xml:0
+#, python-format
+msgid "With a"
+msgstr ""

@@ -1,0 +1,296 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_coupons
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-02 03:45+0000\n"
+"PO-Revision-Date: 2021-09-02 03:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/screens.js:0
+#, python-format
+msgid " DISCOUNT ON YOUR NEXT PURCHASE"
+msgstr " DE DESCUENTO EN SU SIGUIENTE COMPRA"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/screens.js:0
+#, python-format
+msgid " ON YOUR NEXT PURCHASE"
+msgstr " EN SU SIGUIENTE COMPRA"
+
+#. module: pos_coupons
+#: model_terms:ir.ui.view,arch_db:pos_coupons.view_pos_config_coupons_form
+msgid "Allow to consume coupons"
+msgstr "Permitir canjear cupones"
+
+#. module: pos_coupons
+#: model_terms:ir.ui.view,arch_db:pos_coupons.view_pos_config_coupons_form
+msgid "Allow to create coupons"
+msgstr "Permitir crear cupones"
+
+#. module: pos_coupons
+#: model_terms:ir.ui.view,arch_db:pos_coupons.view_pos_config_coupons_form
+msgid "Allow to create coupons."
+msgstr "Permitir crear cupones."
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Use Coupon"
+msgstr "Aplicar Cupón"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "COUPON"
+msgstr "CANJEAR"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_coupons
+#: model_terms:ir.ui.view,arch_db:pos_coupons.view_pos_pos_form_coupon
+msgid "Coupons"
+msgstr "Cupones"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order__coupon_id
+msgid "Coupon used"
+msgstr "Cupon Canjeado"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__coupon_id
+msgid "Generated Coupon"
+msgstr "Cupon Generado"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "Invalid Coupon"
+msgstr "Cupon inválido"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order__coupon_program_ids
+msgid "Applied Coupons"
+msgstr "Cupones Aplicados"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Applied coupon:"
+msgstr "Cupón aplicado:"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "Deleted coupon. Click again to apply new coupon."
+msgstr "Cupón eliminado. haga click nuevamente para aplicar nuevo cupón."
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Valid coupon"
+msgstr "Cupón válido"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Code:"
+msgstr "Código:"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "You need to enter a valid coupon!"
+msgstr "Debe ingresar un cupón válido!"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "Valid coupon! It will allow to get "
+msgstr "El cupon es valido! Permitirá el canje de "
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "Consume error"
+msgstr "Error en canje"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/screens.js:0
+#, python-format
+msgid "FREE "
+msgstr "GRATIS "
+
+#. module: pos_coupons
+#: model_terms:ir.ui.view,arch_db:pos_coupons.view_pos_pos_form_coupon
+msgid "Generated Coupons"
+msgstr "Cupones generados"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Enter the code here:"
+msgstr "Ingrese el código del cupón:"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon____last_update
+msgid "Last Modified on"
+msgstr "Modificado el"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__order_id
+msgid "POS Order"
+msgstr "Orden de POS"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_sale_coupon__pos_order_id
+msgid "POS Order using it"
+msgstr "Orden de POS que lo usa"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_config__allow_read_coupons
+msgid "Permitir canje de cupones"
+msgstr ""
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_config__allow_create_coupons
+msgid "Permitir generacion de cupones"
+msgstr ""
+
+#. module: pos_coupons
+#: model:ir.model,name:pos_coupons.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración de Punto de Venta"
+
+#. module: pos_coupons
+#: model:ir.model,name:pos_coupons.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos de Punto de Venta"
+
+#. module: pos_coupons
+#: model:ir.model.fields,field_description:pos_coupons.field_pos_order_coupon__coupon_program_id
+msgid "Coupon Program"
+msgstr "Programa de Cupones"
+
+#. module: pos_coupons
+#: model:ir.model,name:pos_coupons.model_sale_coupon
+msgid "Sales Coupon"
+msgstr "Cupón de ventas"
+
+#. module: pos_coupons
+#: model:ir.model,name:pos_coupons.model_sale_coupon_program
+msgid "Sales Coupon Program"
+msgstr "Programa de cupones de ventas"
+
+#. module: pos_coupons
+#: code:addons/pos_coupons/models/sale_coupon.py:0
+#, python-format
+msgid "The coupon program for %s is in draft or closed state"
+msgstr "El programa de cupones de %s está en proyecto o en estado cerrado"
+
+#. module: pos_coupons
+#: code:addons/pos_coupons/models/sale_coupon.py:0
+#, python-format
+msgid "This coupon %s exists but the origin sales order is not validated yet."
+msgstr ""
+"El cupón %s existe, pero la orden de venta originaria aún no ha sido "
+"validada."
+
+#. module: pos_coupons
+#: code:addons/pos_coupons/models/sale_coupon.py:0
+#, python-format
+msgid "This coupon %s has been used or is expired."
+msgstr "El cupón %s ya ha sido usado o ha caducado."
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Use this promotional code before"
+msgstr "Usa este código promocional antes de"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Validate"
+msgstr "Verificar"
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/xml/pos.xml:0
+#, python-format
+msgid "Válido por compras por encima de"
+msgstr ""
+
+#. module: pos_coupons
+#. openerp-web
+#: code:addons/pos_coupons/static/src/js/popups.js:0
+#, python-format
+msgid "There is a coupon already applied. Want to replace it?"
+msgstr "Ya existe un cupón aplicado. ¿Desea reemplazarlo?"
+
+#. module: pos_coupons
+#: model:ir.model,name:pos_coupons.model_pos_order_coupon
+msgid "pos.order.coupon"
+msgstr ""

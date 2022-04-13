@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="itseries_available_view_tree" model="ir.ui.view">
+		<field name="name">it.invoice.serie.tree</field>
+		<field name="model">it.invoice.serie</field>
+		<field name="arch" type="xml">
+			<tree string="Series para comprobantes">
+				<field name="display_name" />
+				<field name="document_type_id" groups="account.group_account_user"/>
+				<field name="company_id" groups="base.group_multi_company" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_it_invoice_available_tree" model="ir.actions.act_window">
+		<field name="context">{}</field>
+		<field name="name">Series para comprobantes</field>
+		<field name="res_model">it.invoice.serie</field>
+		<field name="view_id" ref="itseries_available_view_tree"/>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record id="view_pos_config_l10n_pe_itgrupo" model="ir.ui.view">
+		<field name="name">pos.config.form.l10n.pe.itgrupo</field>
+		<field name="model">pos.config</field>
+		<field name="inherit_id" ref="pos_base.view_pos_config_base"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='pos_base']" position="inside">
+				<div class="col-12 col-lg-6 o_setting_box" id="itserie_available_new">
+					<div class="o_setting_right_pane">
+						<span class="o_form_label">Series para comprobantes</span>
+						<div class="text-muted">
+							Series para comprobantes
+						</div>
+						<div class="content-group mt16">
+							<field name="itserie_ids" colspan="4" nolabel="1" widget="many2many_tags" />
+						</div>
+						<div>
+							<button name="%(itseries_available_view_tree)d" icon="fa-arrow-right" type="action" string="Series para comprobantes" class="btn-link"/>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

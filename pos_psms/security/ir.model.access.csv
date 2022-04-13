@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_psms_hose_user,pos_psms.hose.user,model_pos_psms_hose,,1,1,1,1
+access_pos_psms_statement_hose_user,pos_psms.statement.hose.user,model_pos_psms_statement_hose,,1,1,1,1
+access_pos_psms_fuel_pump_user,pos_psms.fuel_pump.user,model_pos_psms_fuel_pump,,1,1,1,1
+access_pos_psms_shift_user,pos_psms.shift.user,model_pos_psms_shift,,1,1,1,1
+access_res_company_branch_address_shift_user,pos_psms.shift.user,model_res_company_branch_address_shift,,1,1,1,1

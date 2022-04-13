@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="PsmsWidget">
+		<div class="pos-psms">
+			<t t-foreach="hoses" t-as="hose">
+				<div class="fuel-dispenser">
+					<img src="/pos_psms/static/src/img/fuel_dispenser.png" />
+					<img t-att-src='"/pos_psms/static/src/img/"+hose.product.barcode+".png"' />
+				</div>
+			</t>
+		</div>
+	</t>
+
+    <t t-extend="OrderReceipt">
+        <t t-jquery='.cashier' t-operation='append'>
+            <t t-if='receipt.hose'>
+                manguera <t t-esc='receipt.hose' />
+            </t>
+            <t t-if='receipt.customer_count'>
+                <div>Vehiculo: <t t-esc='receipt.customer_count' /></div>
+            </t>
+        </t>
+        <t t-jquery='.pos-receipt-contact' t-operation='after'>
+            <div class="pos-receipt-clientpsms">
+                <div t-if="receipt.vehicle_plate" class="receipt-vehicle-place">
+                    PLACA: <t t-esc="receipt.vehicle_plate"/><br />
+                </div>
+                <div t-if="receipt.vehicle_driver" class="receipt-vehicle-driver">
+                    CONDUCTOR: <t t-esc="receipt.vehicle_driver"/><br />
+                </div>
+                <div t-if="receipt.vehicle_odometer" class="receipt-vehicle-odometer">
+                    ODOMETRO: <t t-esc="receipt.vehicle_odometer"/><br />
+                </div>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="PosTicketInvoice">
+        <t t-jquery='.receipt-sequence' t-operation='after'>
+            <div t-if="order.get_vehicle_plate()" class="receipt-vehicle-place">
+                PLACA: <t t-esc="order.get_vehicle_plate()"/><br />
+            </div>
+            <div t-if="order.get_vehicle_driver()" class="receipt-vehicle-driver">
+                CONDUCTOR: <t t-esc="order.get_vehicle_driver()"/><br />
+            </div>
+            <div t-if="order.get_vehicle_odometer()" class="receipt-vehicle-odometer">
+                ODOMETRO: <t t-esc="order.get_vehicle_odometer()"/><br />
+            </div>
+        </t>
+    </t>
+
+    <t t-name="HoseGuestsButton">
+        <div class="control-button">
+            <!--<span class="control-button-number">
+                <t t-esc="widget.vehicle_plate()" />
+            </span>-->
+            Placa vehiculo
+        </div>
+    </t>
+
+    <t t-name="VehicleWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput">
+                <p class="title">
+                    <t t-esc=" widget.title || '' " />
+                </p>
+                <div style="margin: 12px auto;">
+                    <span>Placa:</span>
+                    <input type="text" name="vehicle_plate" autocomplete="off" t-att-value="widget.options.vehicle_plate || ''"></input>
+                    <span>Conductor (opcional):</span>
+                    <input type="text" name="vehicle_driver" autocomplete="off" t-att-value="widget.options.vehicle_driver || ''"></input>
+                    <span>Kilometraje (opcional):</span>
+                    <input type="text" name="vehicle_odometer" autocomplete="off" t-att-value="widget.options.vehicle_odometer || ''"></input>
+                    <div class="footer">
+                        <div class="button confirm">Guardar Información</div>
+                        <div class="button cancel">Cancelar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="NumpadWidget">
+        <div class="numpad">
+            <button class="input-button number-char">1</button>
+            <button class="input-button number-char">2</button>
+            <button class="input-button number-char">3</button>
+            <button class="mode-button" data-mode='quantity'>Qty</button>
+            <br />
+            <button class="input-button number-char">4</button>
+            <button class="input-button number-char">5</button>
+            <button class="input-button number-char">6</button>
+            <button class="mode-button" data-mode='discount'>Disc</button>
+            <br />
+            <button class="input-button number-char">7</button>
+            <button class="input-button number-char">8</button>
+            <button class="input-button number-char">9</button>
+            <button class="mode-button" data-mode='price'>Price</button>
+            <br />
+            <button class="input-button numpad-minus" >+/-</button>
+            <button class="input-button number-char">0</button>
+            <button class="input-button number-char">.</button>
+            <button class="input-button numpad-backspace">
+                <img style="pointer-events: none;" src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
+            </button>
+            <button class="mode-button" data-mode="price_total" style="width:216px;font-weight:bold;font-size: 14px;">Total</button>
+        </div>
+    </t>
+
+    <t t-name="HoseWidget">
+        <t t-if='!widget.selected'>
+            <div class='hose' t-att-style='widget.hose_style_str()'>
+                <t t-if='widget.order_count'>
+                    <span t-att-class='"order-count " + (widget.notifications.printing ? "notify-printing":"") + (widget.notifications.skipped ? "notify-skipped" : "")'><t t-esc='widget.order_count'/></span>
+                </t>
+                <div class="hose_icon">
+                    <img style="pointer-events: none;" src="/pos_psms/static/src/img/fuel_hose_a.png" />
+                </div>
+                <div class="hose_side">
+                    <span class="side-label"><t t-esc='widget.hose.side' /></span>
+                    <span class="hose-label"><t t-esc='widget.hose.name' /></span>
+                </div>
+                <div class="hose_detail">
+                    <t t-esc='widget.hose.product_id[1]' />
+                </div>
+                <!--<span class="hose-seats"><t t-esc="widget.table.seats" /></span>-->
+            </div>
+        </t>
+        <t t-if='widget.selected'>
+            <div class='hose selected' t-att-style='widget.hose_style_str()'>
+                <span class='label'>
+                    <t t-esc='widget.hose.name' />
+                </span>
+                <!--<span class="table-seats"><t t-esc="widget.table.seats" /></span>-->
+                <span class='hose-handle top'></span>
+                <span class='hose-handle bottom'></span>
+                <span class='hose-handle left'></span>
+                <span class='hose-handle right'></span>
+            </div>
+        </t>
+    </t>
+
+    <t t-name="BackToFuelPumpButton">
+        <span class="order-button fuel-pump-button">
+            <i class='fa fa-angle-double-left'/>
+            <t t-esc="fuel_pump.name"/>
+            <span class='fuel-pump-name'>
+                ( <t t-esc="hose.name" /> )
+            </span>
+        </span>
+    </t>
+
+    <t t-name="FuelPumpScreenWidget">
+        <div class='fuel-pump-screen screen'>
+            <div class='screen-content-flexbox'>
+                <t t-if='widget.pos.fuel_pumps.length > 1'>
+                    <div class='fuel-pump-selector'>
+                        <t t-foreach="widget.pos.fuel_pumps" t-as="fuel_pump">
+                            <t t-if="fuel_pump.id === widget.fuel_pump.id">
+                                <span class='button button-fuel-pump active' t-att-data-id="fuel_pump.id"><t t-esc="fuel_pump.name" /></span>
+                            </t>
+                            <t t-if="fuel_pump.id !== widget.fuel_pump.id">
+                                <span class='button button-fuel_pump' t-att-data-id="fuel_pump.id"><t t-esc="fuel_pump.name" /></span>
+                            </t>
+                        </t>
+                    </div>
+                </t>
+                <div class='fuel-pump-map' t-att-style='widget.get_fuel_pump_style()' >
+                    <div class='empty-fuel-pump oe_hidden'>
+                        This floor has no tables yet, use the <i class="fa fa-plus"></i> button in the editing toolbar to create new tables.
+                    </div>
+                    <div class='fuel_pumps'></div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

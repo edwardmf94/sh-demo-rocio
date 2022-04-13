@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="pos_coupons" xml:space="preserve">
+	<t t-extend="ProductScreenWidget">
+		<t t-jquery="div.centerpane" t-operation="append">
+			<button name="btnCoupon">COUPON</button>
+		</t>
+	</t>
+	<t t-name="CouponPopupWidget">
+		<div class="modal-dialog">
+			<div class="popup popup-help">
+				<p class="message">Enter the code here:</p>
+				<label class="mode" name="mode"></label>
+				<div class="ex_content">
+					<input type="text" name="coupon_code" />
+					<button class="button_check">Validate</button>
+				</div>
+				<div>
+					<span>Valid coupon</span>
+					<span class="coupon-msg"></span>
+				</div>
+				<div class="button button_apply">Use Coupon</div>
+				<div class="button button_close">Cancel</div>
+			</div>
+		</div>
+	</t>
+	<t t-extend="OrderReceipt">
+		<t t-jquery='.before-footer' t-operation='after'>
+			<t t-if="order.get_coupon_id()">
+				<br />
+				<div>
+					Applied coupon: <span t-esc='order.get_coupon_id().code' class="pos-receipt-right-align"/>
+				</div>
+			</t>
+		</t>
+		<t t-jquery='.before-footer' t-operation='after'>
+			<t t-if="order.get_coupon_program()">
+				<t t-foreach="order.get_coupon_program()" t-as="program">
+					<hr/>
+					<div class="pos-receipt-center-align pos-receipt-contact">
+						<span><t t-esc="program.title"/></span><br/>
+						<span>Use this promotional code before <t t-esc="program.due_date"/></span><br/>
+						<span>Code: <t t-esc="program.coupon_uid"/></span><br/>
+						<span>Válido por compras por encima de <t t-esc="widget.format_currency(program.minimun)"/></span><br/>
+					</div>
+					<img t-attf-src="/report/barcode/?type=Code128&amp;value=#{program.coupon_uid}&amp;width=280&amp;height=50"/>
+					<br/>
+				</t>
+			</t>
+		</t>
+	</t>
+</templates>

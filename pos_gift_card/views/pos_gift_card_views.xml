@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="gift_card_form" model="ir.ui.view">
+		<field name="name">pos.gift.card.form</field>
+		<field name="model">pos.gift.card</field>
+		<field name="arch" type="xml">
+			<form string="Gift Card" version="7.0">
+				<sheet>
+					<group>
+						<field name="name"/>
+						<field name="partner_id"/>
+						<field name="amount"/>
+						<field name="start_date"/>
+						<field name="due_date"/>
+						<field name="paid_reference"/>
+						<field name="state" />
+						<field name="repeat" />
+						<field name="limit" attrs="{ 'invisible': [('repeat','=',False)] }"/>
+						<field name="counter" attrs="{ 'invisible': [('repeat','=',False)] }"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="gift_card_tree" model="ir.ui.view">
+		<field name="name">pos.gift.card.tree</field>
+		<field name="model">pos.gift.card</field>
+		<field name="arch" type="xml">
+			<tree string="Gift Card">
+				<field name="name"/>
+				<field name="partner_id"/>
+				<field name="amount"/>
+				<field name="start_date"/>
+				<field name="due_date"/>
+				<field name="state" />
+			</tree>
+		</field>
+	</record>
+	<record id="gift_card_search" model="ir.ui.view">
+		<field name="name">pos.gift.card.search</field>
+		<field name="model">pos.gift.card</field>
+		<field name="arch" type="xml">
+			<search string="Search Gift Card">
+				<field name="name" string="Codigo"/>
+				<field name="partner_id" string="Beneficiario"/>
+			</search>
+		</field>
+	</record>
+
+	<record id="action_gift_card_tree" model="ir.actions.act_window">
+		<field name="name">Gift Card</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">pos.gift.card</field>
+		<field name="view_mode">tree,form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				Click to start a new Gift Card.
+			</p>
+		</field>
+	</record>
+
+	<menuitem action="action_gift_card_tree"
+		id="menu_action_gift_card_tree"
+		parent="point_of_sale.menu_point_config_product"/>
+
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_einvoice_document" inherit_id="l10n_pe_edi_extended.report_einvoice_document">
+        <xpath expr="//h5[@name='invoice_sequence']" position="replace">
+            <h5 name="invoice_sequence"><span class="font-weight-bold" t-esc="o.prefix_val"/> Nº <span class="font-weight-bold" t-esc="o.suffix_val"/></h5>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="pos_coupons" xml:space="preserve">
+	<t t-extend="ReceiptScreenWidget">
+		<t t-jquery="div.pos-receipt-container" t-operation="before">
+			<div class='button printa4'>
+				<i class='fa fa-file-pdf-o'></i>
+				Generar PDF
+			</div>
+		</t>
+	</t>
+</templates>

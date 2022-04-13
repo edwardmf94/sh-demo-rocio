@@ -1,0 +1,197 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_summary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-25 17:42+0000\n"
+"PO-Revision-Date: 2021-02-25 17:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Address:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Amount Total:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Closing Balance:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Closing Date/Time:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Company:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Final Correlative:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Initial Correlative:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Number of Canceled:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Number of Transactions:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Opening Balance:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Opening Date/Time:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Phone:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Point of Sale:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Sale Value:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Seller:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>Taxes:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "<strong>VAT:</strong>"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Amount"
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.actions.report,name:pos_summary.session_arching
+msgid "Arching"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "CLOSE SESSION:"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Cashier"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Correlative"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "DETAIL OF CANCELLATIONS"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "DETAIL OF PAYMENT FORMS"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Date"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Description"
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.model.fields,field_description:pos_summary.field_report_pos_summary_report_session_arching_view__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: pos_summary
+#: code:addons/pos_summary/reports/render_report.py:0
+#, python-format
+msgid "GASTOS VARIOS"
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.model.fields,field_description:pos_summary.field_report_pos_summary_report_session_arching_view__id
+msgid "ID"
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.model.fields,field_description:pos_summary.field_report_pos_summary_report_session_arching_view____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "No. Trans."
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.model,name:pos_summary.model_pos_session
+msgid "Point of Sale Session"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "Reference"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "String"
+msgstr ""
+
+#. module: pos_summary
+#: model_terms:ir.ui.view,arch_db:pos_summary.report_session_arching_view
+msgid "VARIOUS EXPENSES"
+msgstr ""
+
+#. module: pos_summary
+#: model:ir.model,name:pos_summary.model_report_pos_summary_report_session_arching_view
+msgid "report.pos_summary.report_session_arching_view"
+msgstr ""

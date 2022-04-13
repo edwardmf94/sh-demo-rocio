@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem name="Oil Station" id="menu_pos_psms_oil" parent="point_of_sale.menu_point_root" sequence="12"/>
+        <record id="action_pos_psms_fuel_pump" model="ir.actions.act_window">
+            <field name="name">Surtidores</field>
+            <field name="res_model">pos_psms.fuel_pump</field>
+        </record>
+        <menuitem id="menu_pos_psms_fuel_pump"
+            parent="menu_pos_psms_oil"
+            name="Surtidores"
+            action="action_pos_psms_fuel_pump"/>
+        <record id="action_pos_psms_fuel_pump_tree" model="ir.ui.view">
+            <field name="name">pos_psms.fuel_pump.tree</field>
+            <field name="model">pos_psms.fuel_pump</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_pos_psms_pump_tree_form" model="ir.ui.view">
+            <field name="name">pos_psms.fuel_pump.form</field>
+            <field name="model">pos_psms.fuel_pump</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="General">
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="pos_config_id"/>
+                        <field name="state"/>
+                    </group>
+                    <group string="Mangueras">
+                        <field name="hose_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_pos_psms_hose" model="ir.actions.act_window">
+            <field name="name">Mangueras</field>
+            <field name="res_model">pos_psms.hose</field>
+        </record>
+        <menuitem id="menu_pos_psms_hose"
+            parent="menu_pos_psms_oil"
+            name="Mangueras"
+            action="action_pos_psms_hose"/>
+        <record id="action_pos_psms_hose_tree" model="ir.ui.view">
+            <field name="name">pos_psms.hose.tree</field>
+            <field name="model">pos_psms.hose</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_pos_psms_hose_form" model="ir.ui.view">
+            <field name="name">pos_psms.hose.form</field>
+            <field name="model">pos_psms.hose</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="General">
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="side"/>
+                        <field name="state"/>
+                    </group>
+                    <group string="Inventario">
+                        <field name="product_id"/>
+                        <field name="location_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

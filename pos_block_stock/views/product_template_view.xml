@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="product_template_pos_block_form_view" model="ir.ui.view">
+		<field name="name">product.template.form.pos_block.inherit</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="point_of_sale.product_template_form_view"/>
+		<field name="arch" type="xml">
+			<field name="to_weight" position="after">
+				<field name="pos_blocked_wh_ids" widget="many2many_tags" attrs="{'invisible': [('available_in_pos', '=', False)]}"/>
+			</field>
+		</field>
+	</record>
+</odoo>

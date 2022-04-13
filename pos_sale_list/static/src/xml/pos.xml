@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="div.centerpane" t-operation="append">
+            <button name="btnSales">ORDERS</button>
+            <button name="btnSaleSave">S. ORDER</button>
+        </t>
+    </t>
+    <t t-name="SalesLineWidget">
+        <tr class="listview-line" t-att-data-order-id="order.id" t-att-data-order-name="order.name" t-att-data-order-shipped="order.shipped_stock">
+            <td><t t-esc="order.name"/></td>
+            <td><t t-esc="order.date_order"/></td>
+            <td><t t-esc="order.requested_date"/></td>
+            <td><t t-esc="order.partner_id[1]"/></td>
+            <td><t t-esc="order.employee_id[1]"/></td>
+            <td style="text-align:right;"><t t-esc="order.amount_total"/></td>
+            <t t-if="order.cancel and order.amount_total>0">
+                <td style="color:red;">ANULL</td>
+            </t>
+            <t t-if="order.cancel and order.amount_total&lt;=0">
+                <td style="color:red;">RETURN</td>
+            </t>
+            <t t-if="!order.cancel">
+                <td><t t-esc="order.state"/></td>
+            </t>
+            <td>
+                <t t-if="order.shipped_stock==false">
+                    <t t-esc="order.state"/>
+                </t>
+                <t t-if="order.shipped_stock!=false">
+                    <span style="color:red;">Attended</span>
+                </t>
+            </td>
+        </tr>
+    </t>
+    <t t-name="SalesScreenWidget">
+        <div class="listview-screen pos_order_list-screen screen">
+            <div class="screen-content" style="max-width:1280px;">
+                <section class="top-content">
+					<div style="width:100%;text-align:left">
+						<div style="display:inline-block;width:60%;">
+							<div class='button back' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;">
+								<i class='fa fa-angle-double-left'></i>
+								Back
+							</div>
+							<div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnSaleCreate">
+								<i class='fa fa-plus'></i> Create Voucher
+							</div>
+							<div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnSalePrint">
+								<i class='fa fa-print'></i> Print
+							</div>
+							<div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnSaleCancel">
+								<i class='fa fa-trash-o'></i> Cancel
+							</div>
+							<div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnAtender">
+								<i class='fa fa-check'></i> Attend
+							</div>
+						</div>
+						<div style="display:inline-block;width:35%;text-align:right">
+							<span class='searchbox' style="display:inline-block;position:initial;">
+								<input name="search" placeholder='Search... + Enter' style="width:120px"/>
+								<input name="sale_date" placeholder="Programmed for" style="width:100px"/>
+								<span class='search-clear'></span>
+							</span>
+							<span class='searchbox'></span>
+						</div>
+					</div>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='invoice-list'>
+                                        <colgroup>
+                                            <col width='10%' />
+                                            <col width='15%' />
+                                            <col width='15%' />
+                                            <col width='20%' />
+                                            <col width='15%' />
+                                            <col width='5%' />
+                                            <col width='5%' />
+                                            <col width='15%' />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+												<th>Correlative</th>
+												<th>Order date</th>
+												<th>Scheduled date</th>
+												<th>Client</th>
+												<th>Seller</th>
+												<th>Total</th>
+												<th>Status</th>
+												<th>Attended</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='sale-orders-contents'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+    <t t-name="SaveSaleOrderWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-help">
+                <p class="message">Select the order date:</p>
+                <label class="mode" name="mode" > </label>
+
+                <div class="ex_content">
+                    <input type="text" name="date_order" />
+                </div>
+                <div class="button button_close">Cancel</div>
+            </div>
+        </div>
+    </t>
+
+	
+    <t t-name="SalePrintScreenWidget" t-extend="ReceiptScreenWidget">
+        <t t-jquery="div.top-content" t-operation="inner">
+            <span class='button back'>
+                <i class='fa fa-angle-double-left'></i>
+                Back
+            </span>
+        </t>
+    </t>
+    <t t-name="SalePrint">
+        <div class="pos-sale-ticket" style='width:270px;'>
+            <div class="pos-center-align"><t t-esc="widget.pos.company.name"/></div>
+            <div class="pos-center-align"><t t-esc="widget.pos.company.vat"/></div>
+            <div class="receipt-invoice pos-center-align">
+                <t t-esc="order.name"/><br />
+            </div>
+            <div class="receipt-user">
+                DATE: <t t-esc="order._date"/><br />
+            </div>
+            <div class="receipt-client-name">
+                NAME: <t t-esc="order.partner_name"/><br />
+            </div>
+            <div class="receipt-client-name">
+                STREET: <t t-esc="order.partner_address"/><br />
+            </div>
+            <div class="receipt-client-name">
+                SELLER: <t t-esc="order.seller_name"/><br />
+            </div>
+            <table class='receipt-orderlines'>
+                <colgroup>
+                    <col width='20%' />
+                    <col width='20%' />
+                    <col width='20%' />
+                    <col width='20%' />
+                    <col width='20%' />
+                </colgroup>
+                <tr>
+                    <td class="pos-center-align" colspan="4">DESCRIPCION</td>
+                    <td class="pos-center-align">TOTAL</td>
+                </tr>
+                <t t-foreach="order.order_line" t-as="orderline">
+                    <tr>
+                        <td colspan="5">
+                            <t t-esc="orderline.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="pos-right-align">
+                            <t t-esc="orderline.product_uom_qty"/>
+                        </td>
+                        <td class="pos-right-align">
+                            <t t-esc="orderline.product_uom[1]"/>
+                        </td>
+                        <td class="pos-right-align line_price_unit">
+                            <t t-esc="orderline.price_unit.toFixed(2)"/>
+                        </td>
+                        <td class="pos-right-align">
+                            <t t-esc="orderline.price_total.toFixed(2)"/>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+            <br />
+            <table class='receipt-total'>
+                <tr>
+                    <td>TOTAL ITEMS:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="order.qty_items"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AMOUNT TOTAL:</td>
+                    <td class="pos-right-align">
+                        <t t-esc="order.amount_total"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <div class="pos-center-align">
+                INTERNAL CONTROL
+            </div>
+        </div>
+    </t>
+    <t t-name="XmlSalePrint">
+        <receipt>
+            <img/>
+            <textdoubleheight/>
+            <line align="center" font="b"><t t-esc="widget.pos.company.name"/></line><br />
+            <line align="center" font="b">R.U.C.: <t t-esc="widget.pos.company.vat"/></line>
+            <line font="a">PICKING <t t-esc="order.name"/></line>
+            <textnormal/>
+            <line class="receipt-fecha" align="left">
+                DATE: <t t-esc="order._date"/>
+            </line>
+            <line class="receipt-client-name">
+                NAME: <t t-esc="order.get_client_name_xml()"/>
+            </line>
+            <line>STREET: <t t-esc="order.partner_address"/></line>
+            <line>SELLER: <t t-esc="order.seller_name"/></line>
+            <br/>
+            <table class='receipt-orderlines'>
+                <tr>
+                    <td width="0.80" align="center" font="b">DESCRIPTION</td>
+                    <td width="0.20" align="right" font="b">TOTAL</td>
+                </tr>
+                <t t-foreach="order.order_line" t-as="orderline">
+                    <tr>
+                        <td width="1" align="left">
+                            <t t-esc="orderline.get_product_xml()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="0.20"></td>
+                        <td width="0.20">
+                            <t t-esc="orderline.product_uom_qty"/>
+                        </td>
+                        <td width="0.20">
+                            <t t-esc="orderline.product_uom[1]"/>
+                        </td>
+                        <td width="0.20" align="right" class="line_price_unit">
+                            <t t-esc="orderline.price_unit.toFixed(2)"/>
+                        </td>
+                        <td width="0.20" align="right">
+                            <t t-esc="orderline.price_total.toFixed(2)"/>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+            <br/>
+            <br/>
+            <table>
+                <tr><td align="right">TOTAL ITEMS:</td><td align="right"><t t-esc="order.qty_items"/></td></tr>
+            </table>
+            <table>
+                <tr><td align="right">TOTAL:</td><td align="right"><t t-esc="order.amount_total.toFixed(2)"/></td></tr>
+            </table>
+            <br />
+            <line align="center">
+                INTERNAL CONTROL<br />
+            </line>
+        </receipt>
+    </t>
+</templates>

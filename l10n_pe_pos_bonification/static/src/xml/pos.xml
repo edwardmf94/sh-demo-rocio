@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="ProductScreenWidget">
+		<t t-jquery="div.centerpane" t-operation="append">
+			<button name="btnBonif">BONIFICACION</button>
+		</t>
+	</t>
+
+</templates>

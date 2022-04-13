@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">	
+	<t t-name="XmlSummaryReceipt">
+		<receipt>
+			<textdoubleheight/>
+			<line align="center" font="b"><t t-esc="widget.pos.company.name"/></line><br />
+			<textnormal/>
+			<line align="center" font="a" class="receipt-street"><t t-esc="widget.pos.config.company_branch_address"/></line>
+			<line align="center" font="b">R.U.C.: <t t-esc="widget.pos.company.vat"/></line>
+			<line align="center">
+				TELEFONO: <t t-esc="widget.pos.company.phone || ''"/>
+			</line>
+			<br /><hr />
+			<line align="center" font="b">CIERRE DE CAJA X</line>
+			<br /><hr />
+			<line align="left">
+				Turno: <t t-esc="ss.name"/>
+			</line>
+			<line align="left">
+				Iniciado a: <t t-esc="ss.start_at"/>
+			</line>
+			<t t-if="ss.stop_at">
+				<line align="left">Termino:
+					<t t-esc="ss.stop_at"/>
+				</line><br />
+			</t>
+			<line align="left">
+				Cajero: <t t-esc="ss.user_id"/>
+			</line>
+			<t t-if="ss.cashiers">
+				<line>Total Dia:
+					<t t-esc="ss.day"/>
+				</line>
+				<br />
+				<line>Cajeros:
+					<t t-foreach="ss.cashiers" t-as="cashier">
+						<t t-esc="cashier"/> - 
+					</t>
+				</line>
+			</t>
+			<br /><hr />
+			<t t-foreach="ss.sales_by_sale_journal" t-as="journal">
+				<line align="center"><t t-esc="journal.name" /></line><br />
+				<table>
+					<tr>
+						<td width="0.7">No de Transacciones:</td>
+						<td width="0.3" align="right"><t t-esc="journal.count_transactions" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Valor de venta:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_untaxed)" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Impuestos:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_tax)" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Importe total:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_total)" /></td>
+					</tr>
+				</table>
+			</t>
+			<br/><hr />
+			<line align="center">NOTAS DE CREDITO</line>
+			<br/><hr />
+			<t t-foreach="ss.refund_by_journal" t-as="journal">
+				<table>
+					<tr>
+						<td width="1" align="center"><t t-esc="journal.name" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">No de Transacciones:</td>
+						<td width="0.3" align="right"><t t-esc="journal.count_transactions" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Valor de venta:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_untaxed)" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Impuestos:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_tax)" /></td>
+					</tr>
+					<tr>
+						<td width="0.7">Importe total:</td>
+						<td width="0.3" align="right"><t t-esc="widget.format_currency(journal.amount_total)" /></td>
+					</tr>
+				</table>
+			</t>
+			<br/><hr />
+			<line align="center">DETALLE DE FORMAS DE PAGO</line>
+			<br/><hr />
+			<table>
+				<tr>
+					<td width="0.4"></td>
+					<td width="0.35">Nro.Transac.</td>
+					<td width="0.25">Importe</td>
+				</tr>
+				<t t-foreach="ss.sales_by_journal" t-as="journal">
+					<tr>
+						<td width="0.4"><t t-esc="journal.name"/></td>
+						<td width="0.35"><t t-esc="journal.count_transactions"/></td>
+						<td width="0.25" align="right"><t t-esc="widget.format_currency(journal.amount)"/></td>
+					</tr>
+				</t>
+			</table>
+			<t t-if="ss.credits">
+				<t t-if="ss.credits and ss.credits.length>0">
+					<line align="center">DETALLE DE CRÉDITO</line>
+					<br /><hr />
+					<table class="detalle-credito">
+						<tr>
+							<td width="0.2" align="center">RUC</td>
+							<td width="0.4" align="center">Cliente</td>
+							<td width="0.2" align="center">Comprobante</td>
+							<td width="0.2" align="center">Monto</td>
+						</tr>
+						<tr t-foreach="ss.credits" t-as="credit">
+							<td width="0.2" align="left"><t t-esc="credit.partner_vat" /></td>
+							<td width="0.4" align="left"><t t-esc="credit.partner_name" /></td>
+							<td width="0.2" align="center"><t t-esc="credit.invoice_name" /></td>
+							<td width="0.2" align="right"><t t-esc="widget.format_currency(credit.amount_total)"/></td>
+						</tr>
+					</table>
+				</t>
+			</t>
+			<br/><hr />
+			<table>
+				<tr>
+					<td width="0.7">TOTAL TRANSAC.</td>
+					<td width="0.3" align="right"><t t-esc="ss.count_transactions"/></td>
+				</tr>
+				<tr>
+					<td width="0.7">TOTAL ANULADOS</td>
+					<td width="0.3" align="right"><t t-esc="ss.count_cancel"/></td>
+				</tr>
+				<tr>
+					<td width="0.7">SUBTOTAL GRAVADO</td>
+					<td width="0.3" align="right"><t t-esc="widget.format_currency(ss.total_grav)"/></td>
+				</tr>
+				<tr>
+					<td width="0.7">TOTAL IMPUESTOS</td>
+					<td width="0.3" align="right"><t t-esc="widget.format_currency(ss.total_tax)"/></td>
+				</tr>
+				<tr>
+					<td width="0.7">TOTAL</td>
+					<td width="0.3" align="right"><t t-esc="widget.format_currency(ss.total)"/></td>
+				</tr>
+			</table>
+			<hr />
+			<line align="center">CONTROL INTERNO</line>
+		</receipt>
+	</t>
+</templates>

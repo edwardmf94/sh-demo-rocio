@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_shift_home" model="ir.actions.act_window">
+            <field name="name">Estacion de combustible</field>
+            <field name="res_model">res.company.branch.address</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <menuitem id="psms_oil_menu" name="Estacion de combustible"
+            parent="point_of_sale.menu_point_root" action="action_shift_home" />
+
+        <record id="view_company_branch_kanban" model="ir.ui.view">
+            <field name="name">res.company.kanban.address.view</field>
+            <field name="model">res.company.branch.address</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_dashboard o_qm_kanban">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="current_shift_id"/>
+                    <field name="current_shift_user_id"/>
+                    <field name="current_shift_state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title mb16">
+                                        <div class="o_primary">
+                                            <t t-esc="record.name.value"/>
+                                        </div>
+                                        <t t-if="record.current_shift_state == 'opening_control'">
+                                            <div class="label label-info o_kanban_inline_block">
+                                                Control de apertura
+                                            </div>
+                                        </t>
+                                        <t t-if="record.current_shift_state == 'opened'">
+                                            <div class="label label-success o_kanban_inline_block">
+                                                Abierto
+                                            </div>
+                                        </t>
+                                        <t t-if="record.current_shift_state == 'closing_control'">
+                                            <div class="label label-info o_kanban_inline_block">
+                                                Control de cierre
+                                            </div>
+                                        </t>
+                                        <div class="o_secondary mt16">
+                                            <t t-esc="record.current_shift_user_id.value || 'Sin uso'"/>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section">
+                                        <a class="o_kanban_manage_toggle_button" href="#">
+                                            <i class="fa fa-ellipsis-v"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content">
+                                    <div class="row">
+                                        <div class="col-6 o_kanban_primary_left">
+                                            <button t-if="_.contains(['opened', 'closing_control'], record.current_shift_state.raw_value)" class="btn btn-default" name="close_existing_shift" type="object">Cerrar turno</button>
+
+                                            <button t-if="!record.current_shift_id or record.current_shift_user_id.raw_value == ''" class="btn btn-primary" name="open_new_shift" type="object">Abrir turno</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                    <div class="row">
+                                        <div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>View</span>
+                                            </div>
+                                            <div>
+                                                <a name="382" type="action">Detalle de turno</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                        <div class="col-xs-12 text-right">
+                                            <a type="edit">Settings</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_pos_psms_shift" model="ir.actions.act_window">
+            <field name="name">Turnos</field>
+            <field name="res_model">pos_psms.shift</field>
+        </record>
+
+        <menuitem id="menu_pos_psms_shift"
+            parent="menu_pos_psms_oil"
+            name="Turnos"
+            action="action_pos_psms_shift"/>
+
+        <record id="action_pos_psms_shift_tree" model="ir.ui.view">
+            <field name="name">pos_psms.shift.tree</field>
+            <field name="model">pos_psms.shift</field>
+            <field name="arch" type="xml">
+                <tree default_order='name'>
+                    <field name="name"/>
+                    <field name="config_id"/>
+                    <field name="shift_type_id"/>
+                    <field name="start_at"/>
+                    <field name="stop_at"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_pos_psms_shift_form" model="ir.ui.view">
+            <field name="name">pos_psms.shift.form</field>
+            <field name="model">pos_psms.shift</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="open_shift" states="draft" type="object" string="Start Shift" class="oe_highlight" confirm="Esta accion abrira el turno agregando la hora de apertura y responsable?" />
+                        <field name="state" widget="statusbar" statusbar_visible="opening_control,opened,closing_control,closed"/>
+                    </header>
+                    <sheet string="Shift Summary">
+                        <group>
+                            <field name="name" attrs="{'readonly':True}"/>
+                            <!--field name="shift_type_id"/-->
+                            <field name="user_id" attrs="{'readonly':True}"/>
+                            <field name="config_id" attrs="{'readonly':True}"/>
+                        </group>
+                        <group>
+                            <field name="start_at" readonly="True"/>
+                            <field name="stop_at" readonly="True"/>
+                        </group>
+                        <group>
+                            <field name="session_ids" readonly="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

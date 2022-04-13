@@ -1,0 +1,8 @@
+.pos .product.disable{
+    pointer-events: none;
+    opacity: 0.4;
+}
+.pos tr.disable{
+    pointer-events: none;
+    opacity: 0.4;
+}

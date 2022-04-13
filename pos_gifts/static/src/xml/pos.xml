@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="ProductScreenWidget">
+        <t t-jquery="div.centerpane" t-operation="append">
+            <button name="btnTaxesFree">SET TAX</button>
+        </t>
+    </t>
+
+	<t t-name="TaxesFreeLineWidget">
+		<div class="selection-item" t-att-data-tax-id="tax.id">
+			<td><t t-esc="tax.name"/></td>
+		</div>
+	</t>
+
+	<t t-name="TaxesFreeWidget">
+		<div class="modal-dialog">
+			<div class="popup popup-selection">
+				<header class="title">Select the Tax to Apply</header>
+				<div class="selection scrollable-y touch-scrollable local-taxes-list-screen">
+					<div class='taxes-contents'></div>
+				</div>
+				<footer class="footer">
+					<div class="button button_close">Cancel</div>
+                </footer>
+			</div>
+		</div>
+	</t>
+
+</templates>

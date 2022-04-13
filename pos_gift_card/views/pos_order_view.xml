@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_gift_voucher_pos_order_view_form" model="ir.ui.view">
+        <field name="name">pos.payment.pos.order.form</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_ids']/tree" position="inside">
+                <field name="gift_voucher" invisible="1"/>
+                <field name="gift_voucher_ref" string="Payment Ref" attrs="{'required':[('gift_voucher','=',True)]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_pos_config_form_back">
+            <field name="name">pos.config.form.view.back</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//h2[@name='order']" position="before">
+                    <h2 name="psms">PSMS</h2>
+                    <group>
+                        <field name="psms"/>
+                    </group>
+                    <separator string="Disponibilidad de surtidores" colspan="4" attrs="{'invisible': [('psms', '!=', True)]}"/>
+                    <div class="row mt16 o_settings_container" attrs="{'invisible': [('psms', '!=', True)]}">
+                        <div class="col-xs-12 col-md-12 o_setting_box">
+                            <field name="fuel_pump_ids" colspan="4" nolabel="1"/>
+                        </div>
+                    </div>
+                    <group attrs="{'invisible': [('psms', '!=', True)]}">
+                        <field name="background" string="Background" placeholder="Choose a file to import..."/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

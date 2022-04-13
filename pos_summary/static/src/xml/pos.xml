@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="div.centerpane" t-operation="append">
+            <button name="btnRes">RESUMEN</button>
+            <button name="btnOldRes">ANT.RES.</button>
+        </t>
+    </t>
+
+    <t t-name="SummaryWidget">
+        <div class='receipt-screen screen'>
+            <div class='screen-content'>
+                <div class='top-content'>
+                    <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        Back
+                    </span>
+                    <h1>Imprimir Resumen</h1>
+                    <span class='button next'>
+                        Ok 
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                </div>
+                <div class="centered-content">
+                    <div class="button print">
+                        <i class='fa fa-print'></i> Imprimir 
+                    </div>
+                    <div class="pos-receipt-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="OldSessionLine">
+        <tr class='order-line' t-att-data-id='session.id'>
+            <td><t t-esc='session.start_at' /></td>
+            <td><t t-esc='session.stop_at' /></td>
+            <td><t t-esc='session.name' /></td>
+            <td><t t-esc='session.user_id[1]' /></td>
+            <td>
+            <button class="button print" t-att-data-id="session.id"><i class="fa fa-print"></i> Reimprimir</button>
+            </td>
+        </tr>
+    </t>
+    <t t-name="OldSessionsScreenWidget">
+        <div class="listview-screen screen oe_hidden">
+            <div class="screen-content" style="max-width:1280px;">
+                <section class="top-content">
+                <div style="width:100%;text-align:left">
+                    <div style="display:inline-block;width:60%;">
+                        <div class='button back' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;">
+                            <i class='fa fa-angle-double-left'></i>
+                            Atrás
+                        </div>
+                        <div class='button highlight' style="display:inline-block;position:initial;margin:12px 2px 12px 2px;" name="btnDia">
+                            Resumen Dia
+                        </div>
+                    </div>
+                    <div style="display:inline-block;width:35%;text-align:right">
+                        <span class='searchbox' style="display:inline-block;position:initial;">
+                            <input placeholder='Search Orders' name="fecha" type="date" />
+                            <span class='search-clear'></span>
+                        </span>
+                        <span class='searchbox'></span>
+                    </div>
+                </div>
+                </section>
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='invoice-list'>
+                                        <thead>
+                                            <tr>
+                                                <th>Inicio</th>
+                                                <th>Fin</th>
+                                                <th>Código</th>
+                                                <th>Cajero</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='order-list-contents'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+</templates>

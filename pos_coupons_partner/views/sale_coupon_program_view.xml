@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_coupon_program_view_pos_program_form" model="ir.ui.view">
+        <field name="name">sale.coupon.pos.program.form</field>
+        <field name="model">sale.coupon.program</field>
+        <field name="inherit_id" ref="sale_coupon.sale_coupon_program_view_form_common"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='program_type']" position="after">
+                <field name="rule_partners_domain" placeholder="Select customer" widget="domain" options="{'model': 'res.partner', 'in_dialog': true}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

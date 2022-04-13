@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="l10n_pe_pos.popups" inherit_id="point_of_sale.template">
+    <t t-name="CreditNotePopup">
+        <div class="modal-dialog">
+            <div class="popup popup-help">
+              <p class="message">Detallanos mas información</p>
+              <label class="mode" name="mode" > </label>
+              <select name="credit_note_type" style="width:90%;height:35px;line-height:35px;font-size:16px;text-align:center;margin-top:5px;">
+                <option value="">-- Tipo nota de credito --</option>
+              </select>
+              <input type="text" name="origin" style="width:90%;height:35px;line-height:35px;font-size:16px;margin-top:5px;" disabled="disabled"/>
+              <textarea type="text" name="credit_note_reason" style="width:80%;height:105px;line-height:35px;font-size:16px;margin-top:5px;"></textarea>
+              <div class="ex_content"></div>
+              <div class="button button_ok" name="createCreditNote">Crear y editar</div>
+              <div class="button button_close">Cancelar</div>
+            </div>
+        </div>
+    </t>
+</templates>

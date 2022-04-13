@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_summary_credit" xml:space="preserve">
+	<t t-extend="SummaryReceipt">
+        <t t-jquery='.summary-payment' t-operation='before'>
+			<t t-if="ss.credits and ss.credits.length>0">
+				<table width="100%">
+					<tr>
+						<td>DETALLE DE CRÉDITO</td>
+					</tr>
+				</table>
+				<hr />
+				<table class="detalle-credito" width="100%">
+					<thead>
+						<tr>
+							<th style="text-align:center;">RUC</th>
+							<th style="text-align:center;">Cliente</th>
+							<th style="text-align:center;">Comprobante</th>
+							<th style="text-align:center;">Monto</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr t-foreach="ss.credits" t-as="credit">
+							<td style="text-align:left;"><span t-esc="credit.partner_vat" /></td>
+							<td style="text-align:left;"><span t-esc="credit.partner_name" /></td>
+							<td style="text-align:center;"><span t-esc="credit.invoice_name" /></td>
+							<td style="text-align:right;"><span t-esc="widget.format_currency(credit.amount_total)"/></td>
+						</tr>
+					</tbody>
+				</table>
+				<hr />
+			</t>
+        </t>
+	</t>
+</templates>

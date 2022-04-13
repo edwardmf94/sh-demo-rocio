@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="pos_credit" xml:space="preserve">
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".paymentmethods-container" t-operation="after">
+            <div class="paymentcredit">
+                <div class="button btn-credit" name="btnCredit">Crédito</div>
+            </div>
+        </t>
+    </t>
+</templates>
