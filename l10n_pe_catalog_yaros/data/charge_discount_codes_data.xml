@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="charge_discount_codes_00" model="charge.discount.codes">
+            <field name="description">Descuentos que afectan la base imponible del IGV</field>
+            <field name="code">00</field>
+        </record>
+
+        <record id="charge_discount_codes_01" model="charge.discount.codes">
+            <field name="description">Descuentos que no afectan la base imponible del IGV</field>
+            <field name="code">01</field>
+        </record>
+
+        <record id="charge_discount_codes_02" model="charge.discount.codes">
+            <field name="description">Descuentos globales que afectan la base imponible del IGV</field>
+            <field name="code">02</field>
+        </record>
+
+        <record id="charge_discount_codes_03" model="charge.discount.codes">
+            <field name="description">Descuentos globales que no afectan la base imponible del IGV</field>
+            <field name="code">03</field>
+        </record>
+
+        <record id="charge_discount_codes_45" model="charge.discount.codes">
+            <field name="description">FISE</field>
+            <field name="code">45</field>
+        </record>
+
+        <record id="charge_discount_codes_46" model="charge.discount.codes">
+            <field name="description">Recargo al consumo y/o propinas</field>
+            <field name="code">46</field>
+        </record>
+
+        <record id="charge_discount_codes_47" model="charge.discount.codes">
+            <field name="description">Cargos que afectan la base impnible del IGV</field>
+            <field name="code">47</field>
+        </record>
+
+    </data>
+</odoo>

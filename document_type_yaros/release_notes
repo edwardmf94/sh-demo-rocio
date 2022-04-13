@@ -1,0 +1,4 @@
+Version 13.0.1.4 - 	18 May 20
+===================================
+
+1. Delete country validation on res.partner

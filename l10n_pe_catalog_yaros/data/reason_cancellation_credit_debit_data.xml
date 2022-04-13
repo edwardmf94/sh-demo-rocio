@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="reason_cancellation_credit_debit_01" model="reason.cancellation.credit.debit">
+            <field name="description">Anulación de la operación</field>
+            <field name="code">01</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_02" model="reason.cancellation.credit.debit">
+            <field name="description">Anulación por error en el RUC</field>
+            <field name="code">02</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_03" model="reason.cancellation.credit.debit">
+            <field name="description">Corrección por error en la descripción</field>
+            <field name="code">03</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_04" model="reason.cancellation.credit.debit">
+            <field name="description">Descuento Global</field>
+            <field name="code">04</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_05" model="reason.cancellation.credit.debit">
+            <field name="description">Descuento por Ítem</field>
+            <field name="code">05</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_06" model="reason.cancellation.credit.debit">
+            <field name="description">Devolución Total</field>
+            <field name="code">06</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_07" model="reason.cancellation.credit.debit">
+            <field name="description">Devolución por Ítem</field>
+            <field name="code">07</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_08" model="reason.cancellation.credit.debit">
+            <field name="description">Bonificación</field>
+            <field name="code">08</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_09" model="reason.cancellation.credit.debit">
+            <field name="description">Disminución en el valor</field>
+            <field name="code">09</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_10" model="reason.cancellation.credit.debit">
+            <field name="description">Otros Conceptos</field>
+            <field name="code">10</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_credito"/>
+        </record>
+
+
+        <record id="reason_cancellation_credit_debit_11" model="reason.cancellation.credit.debit">
+            <field name="description">Intereses por mora</field>
+            <field name="code">01</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_debito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_12" model="reason.cancellation.credit.debit">
+            <field name="description">Aumento en el valor</field>
+            <field name="code">02</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_debito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_13" model="reason.cancellation.credit.debit">
+            <field name="description">Penalidades/ otros conceptos</field>
+            <field name="code">03</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_debito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_14" model="reason.cancellation.credit.debit">
+            <field name="description">Ajustes de operaciones de exportación</field>
+            <field name="code">11</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_debito"/>
+        </record>
+
+        <record id="reason_cancellation_credit_debit_15" model="reason.cancellation.credit.debit">
+            <field name="description">Ajustes afectos al IVAP</field>
+            <field name="code">12</field>
+            <field name="inv_document_type_id" ref="l10n_pe_catalog_yaros.invoice_document_type_nota_debito"/>
+        </record>
+
+    </data>
+</odoo>

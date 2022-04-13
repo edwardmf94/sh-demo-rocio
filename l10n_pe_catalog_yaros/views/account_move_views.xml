@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="catalogos_sunat_menu_localization"
+              name="Catálogos SUNAT"
+              parent="localization_menu.menu_localization_invoicing"
+              sequence="10"
+    />
+
+    <!--igv.afectation.type-->
+    <record id="igv_afectation_type_form_view" model="ir.ui.view">
+        <field name="name">igv.afectation.type.form</field>
+        <field name="model">igv.afectation.type</field>
+        <field name="arch" type="xml">
+            <form string="[07] Tipo de Afectación al IGV">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                        <!--<field name="code_sunat_id" required="True"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="igv_afectation_type_tree_view" model="ir.ui.view">
+        <field name="name">igv.afectation.type.tree</field>
+        <field name="model">igv.afectation.type</field>
+        <field name="arch" type="xml">
+            <tree string="[07] Tipo de Afectación al IGV">
+                <field name="code"/>
+                <field name="description"/>
+                <!--<field name="code_sunat_id"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="igv_afectation_type_action" model="ir.actions.act_window">
+        <field name="name">[07] Tipo de Afectación al IGV</field>
+        <field name="res_model">igv.afectation.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="igv_afectation_type_menu_localization"
+              name="[07] IGV - Tipo Afectación"
+              parent="catalogos_sunat_menu_localization"
+              sequence="7"
+              action="igv_afectation_type_action"
+    />
+
+    <!--isc.calculation.system-->
+    <record id="isc_calculation_system_form_view" model="ir.ui.view">
+        <field name="name">isc.calculation.system.form</field>
+        <field name="model">isc.calculation.system</field>
+        <field name="arch" type="xml">
+            <form string="[08] Tipo de Sistema de Cálculo del ISC">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                        <!--<field name="code_sunat_id" required="True"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="isc_calculation_system_tree_view" model="ir.ui.view">
+        <field name="name">isc.calculation.system.tree</field>
+        <field name="model">isc.calculation.system</field>
+        <field name="arch" type="xml">
+            <tree string="[08] Tipo de Sistema de Cálculo del ISC">
+                <field name="code"/>
+                <field name="description"/>
+                <!--<field name="code_sunat_id"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="isc_calculation_system_action" model="ir.actions.act_window">
+        <field name="name">[08] Tipo de Sistema de Cálculo del ISC</field>
+        <field name="res_model">isc.calculation.system</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="isc_calculation_system_menu_localization"
+              name="[08] Tipo de Sistema de Cálculo del ISC"
+              parent="catalogos_sunat_menu_localization"
+              sequence="8"
+              action="isc_calculation_system_action"
+    />
+
+    <!--account.tax-->
+    <record id="account_tax_catalogo_7_8_inherit_form_view" model="ir.ui.view">
+        <field name="name">account.tax.catalogo.7.8</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Localización Perú">
+                    <group string="Catalogos">
+                        <group>
+                            <field name="igv_afectaction_type_id"/>
+                        </group>
+                        <group>
+                            <field name="isc_calculation_system_id"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!--reason.cancellation.credit.debit-->
+    <record id="reason_cancellation_credit_debit_form_view_inherit" model="ir.ui.view">
+        <field name="name">reason.cancellation.credit.debit</field>
+        <field name="model">reason.cancellation.credit.debit</field>
+        <field name="inherit_id" ref="motive_refund.reason_cancellation_credit_debit_form_view"/>
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="inv_document_type_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="reason_cancellation_credit_debit_tree_view_inherit" model="ir.ui.view">
+        <field name="name">reason.cancellation.credit.debit</field>
+        <field name="model">reason.cancellation.credit.debit</field>
+        <field name="inherit_id" ref="motive_refund.reason_cancellation_credit_debit_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="inv_document_type_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="catalog_reason_cancellation_credit_debit1_action" model="ir.actions.act_window">
+        <field name="name">[09] Códigos de motivo de emisión de nota de crédito electrónica</field>
+        <field name="res_model">reason.cancellation.credit.debit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('inv_document_type_id.code', '=', '07')]</field>
+    </record>
+
+    <menuitem id="catalog_reason_credit_system_menu_localization"
+              name="[09] Códigos de motivo de emisión de nota de crédito electrónica"
+              parent="catalogos_sunat_menu_localization"
+              sequence="9"
+              action="catalog_reason_cancellation_credit_debit1_action"
+    />
+
+    <record id="catalog_reason_cancellation_credit_debit2_action" model="ir.actions.act_window">
+        <field name="name">[10] Códigos de motivo de emisión de nota de débito electrónica</field>
+        <field name="res_model">reason.cancellation.credit.debit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('inv_document_type_id.code', '=', '08')]</field>
+    </record>
+
+    <menuitem id="catalog_reason_debit_system_menu_localization"
+              name="[10] Códigos de motivo de emisión de nota de débito electrónica"
+              parent="catalogos_sunat_menu_localization"
+              sequence="10"
+              action="catalog_reason_cancellation_credit_debit2_action"
+    />
+
+    <!--transfer.type.codes-->
+    <record id="transfer_type_codes_view_form" model="ir.ui.view">
+        <field name="name">transfer.type.codes.view.form</field>
+        <field name="model">transfer.type.codes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="transfer_type_codes_view_tree" model="ir.ui.view">
+        <field name="name">transfer.type.codes.view.tree</field>
+        <field name="model">transfer.type.codes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transfer_type_codes" model="ir.actions.act_window">
+        <field name="name">[18] Códigos de modalidad de Traslado</field>
+        <field name="res_model">transfer.type.codes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="catalog_transfer_type_codes_menu_localization"
+              name="[18] Códigos de modalidad de Traslado"
+              parent="catalogos_sunat_menu_localization"
+              sequence="18"
+              action="action_transfer_type_codes"
+    />
+
+    <!--transfer.reason.codes-->
+    <record id="transfer_reason_codes_view_form" model="ir.ui.view">
+        <field name="name">transfer.reason.codes.view.form</field>
+        <field name="model">transfer.reason.codes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="transfer_reason_codes_view_tree" model="ir.ui.view">
+        <field name="name">transfer.reason.codes.view.tree</field>
+        <field name="model">transfer.reason.codes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transfer_reason_codes" model="ir.actions.act_window">
+        <field name="name">[20] Códigos de motivo de Traslado</field>
+        <field name="res_model">transfer.reason.codes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="catalog_transfer_reason_codes_menu_localization"
+              name="[20] Códigos de motivo de Traslado"
+              parent="catalogos_sunat_menu_localization"
+              sequence="20"
+              action="action_transfer_reason_codes"
+    />
+
+    <!--charge.discount.codes-->
+    <record id="charge_discount_codes_view_form" model="ir.ui.view">
+        <field name="name">charge.discount.codes.view.form</field>
+        <field name="model">charge.discount.codes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="charge_discount_codes_view_tree" model="ir.ui.view">
+        <field name="name">charge.discount.codes.view.tree</field>
+        <field name="model">charge.discount.codes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_charge_discount_codes" model="ir.actions.act_window">
+        <field name="name">[53] Códigos de cargos o descuentos</field>
+        <field name="res_model">charge.discount.codes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="catalog_charge_discount_codes_menu_localization"
+              name="[53] Códigos de cargos o descuentos"
+              parent="catalogos_sunat_menu_localization"
+              sequence="53"
+              action="action_charge_discount_codes"
+    />
+
+    <!--account.move.reversal-->
+    <record id="view_account_move_reversal_inherit" model="ir.ui.view">
+        <field name="name">account.move.reversal.form</field>
+        <field name="model">account.move.reversal</field>
+        <field name="inherit_id" ref="motive_refund.view_account_move_reversal_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[2]/group" position="after">
+                <group>
+                    <field name="inv_document_type_id"
+                           attrs="{'required': [('move_type', '=', 'in_invoice')], 'invisible': [('move_type', '=', 'out_invoice')]}"/>
+                    <field name="prefix_val" attrs="{'required': [('move_type', '=', 'in_invoice')], 'invisible': [('move_type', '=', 'out_invoice')]}"/>
+                    <field name="suffix_val" attrs="{'required': [('move_type', '=', 'in_invoice')], 'invisible': [('move_type', '=', 'out_invoice')]}"/>
+                    <field name="company_id"/>
+                    <field name="document_code"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_form_view_inherit_l10n_pe_catalog_yaros" model="ir.ui.view">
+        <field name="name">product.template.form.view.inherit.l10n_pe_catalog_yaros</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="categ_id" position="before">
+                <field name="charge_discount_id"/>
+		    </field>
+        </field>
+    </record>
+
+</odoo>

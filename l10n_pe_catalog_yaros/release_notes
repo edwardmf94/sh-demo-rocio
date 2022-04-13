@@ -1,0 +1,15 @@
+Version 13.0.3.0 - 	06 May 20
+===================================
+
+1. Add Sunat Catalog N° 18
+
+	- Create model transfer.type.codes with their views and account security rules.
+	- Add the new model to localization menu.
+
+Version 13.0.2.0 - 	05 May 20
+===================================
+
+1. Add Sunat Catalog N° 20
+
+	- Create model transfer.reason.codes with their views and account security rules.
+	- Add the new model to localization menu.
