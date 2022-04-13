@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_move_form_inherit_invoice_document_type_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.invoice.series.correlative</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="purchase_document_type_validation_yaros.view_move_form_inherit_invoice_document_type"/>
+            <field name="arch" type="xml">
+                <field name="prefix_val" position="replace">
+					<field name="prefix_val" attrs="{'readonly': [('type', 'in', ['out_invoice', 'out_refund']), ('state', 'not in', 'draft')], 'invisible': [('type', 'in', ['out_invoice', 'out_refund']), ('state', '=', 'draft')]}" placeholder="Serie"/>
+                </field>
+                <field name="suffix_val" position="replace">
+				    <field name="suffix_val" attrs="{'readonly': [('type', 'in', ['out_invoice', 'out_refund']), ('state', 'not in', 'draft')], 'invisible': [('type', 'in', ['out_invoice', 'out_refund']), ('state', '=', 'draft')]}" placeholder="Correlativo"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>
